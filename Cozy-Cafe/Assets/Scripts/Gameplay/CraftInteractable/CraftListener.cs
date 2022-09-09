@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(CraftInteractable))]
-public class CraftableListener : MonoBehaviour
+public class CraftListener : MonoBehaviour
 {
     [SerializeField] private Transform _prefabTransform;
 

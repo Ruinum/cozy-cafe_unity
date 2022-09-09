@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CraftableTest : MonoBehaviour
+public class CraftTest : MonoBehaviour
 {
     [SerializeField] private ItemSO _itemSO;
     [SerializeField] private CraftInteractable _craftInteractable;
