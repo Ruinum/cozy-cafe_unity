@@ -49,5 +49,5 @@ public class WeekSystem : BaseSingleton<WeekSystem>
             if (_dayLogics[i].DayType != dayType) continue;
             _dayLogics[i].RemoveDayLogic(dayLogic);
         }
-    }
+    }    
 }
