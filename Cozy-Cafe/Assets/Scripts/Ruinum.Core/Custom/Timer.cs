@@ -31,6 +31,11 @@ namespace Ruinum.Core
             if (_currentTime <= 0f) { OnTimerEnd?.Invoke(); RemoveTimer(); }
         }
 
+        public float GetCurrentTime()
+        {
+            return _currentTime;
+        }
+
         protected void RemoveTimer()
         {
             _timers.Remove(this);

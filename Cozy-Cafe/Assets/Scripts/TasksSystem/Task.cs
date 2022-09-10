@@ -6,12 +6,12 @@ using UnityEngine;
 public class Task 
 {
     public bool completed;
+    private Customer customer;
 
     public int TskNum;
     public float Duration;
 
     public List<Dish> Dish = new List<Dish>();
-    public ReceptSO[] recept;
 
     public void AddItem(ItemSO item)
     {
@@ -24,10 +24,10 @@ public class Task
             }
         }
     }
+    public Customer Owner(Customer c = null)
+    {
+        if (c) customer = c;
+        return customer;
+    }
 }
-[System.Serializable]
-public class Dish
-{
-    public ItemSO Item;
-    public bool _isHave;
-}
+
