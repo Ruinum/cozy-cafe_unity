@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Ruinum.Core;
 using UnityEngine;
 
 public class Customer : MonoBehaviour
@@ -7,11 +8,11 @@ public class Customer : MonoBehaviour
     public CustomerText customerText;
     public Task task;
     public float TimeToWait;
-    private Timer _timerToLeave;
+   private Timer _timerToLeave;
 
     private void Start()
     {
-        _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait,Leave);
+    _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait,Leave);
     }
 
     public void AddTask()
