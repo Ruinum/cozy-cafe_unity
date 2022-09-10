@@ -1,17 +1,19 @@
 using UnityEngine;
 
-
-public abstract class Executable : MonoBehaviour, IExecute
+namespace Ruinum.Core
 {
-    public abstract void Execute();
-
-    public virtual void Start()
+    public abstract class Executable : MonoBehaviour, IExecute
     {
-        GameManager.Singleton.AddExecuteObject(this);
-    }
+        public abstract void Execute();
 
-    public virtual void OnDestroy()
-    {
-        GameManager.Singleton.RemoveExecuteObject(this);
+        public virtual void Start()
+        {
+            GameManager.Singleton.AddExecuteObject(this);
+        }
+
+        public virtual void OnDestroy()
+        {
+            GameManager.Singleton.RemoveExecuteObject(this);
+        }
     }
 }

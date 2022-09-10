@@ -1,8 +1,12 @@
 using UnityEngine;
 
 
-public class BaseSingleton<T> : MonoBehaviour where T : MonoBehaviour
+namespace Ruinum.Core
 {
-    public static T Singleton { get; private set; }
-    protected virtual void Awake() => Singleton = this as T;
+    public class BaseSingleton<T> : MonoBehaviour where T : MonoBehaviour
+    {
+        public static T Singleton { get; private set; }
+        protected virtual void Awake() => Singleton = this as T;
+    }
 }
+

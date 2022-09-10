@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Ruinum.Core;
 
 
 public class WeekSystem : BaseSingleton<WeekSystem>

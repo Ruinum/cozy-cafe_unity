@@ -2,41 +2,44 @@
 using UnityEngine;
 
 
-public class GameManager : BaseSingleton<GameManager>
+namespace Ruinum.Core
 {
-    private List<IExecute> _executes = new List<IExecute>();
-
-    private void Start()
+    public class GameManager : BaseSingleton<GameManager>
     {
-        Application.targetFrameRate = 90;
-    }
+        private List<IExecute> _executes = new List<IExecute>();
 
-    private void Update()
-    {
-        for (var i = 0; i < _executes.Count; i++)
+        private void Start()
         {
-            var updatable = _executes[i];
-            updatable.Execute();
+            Application.targetFrameRate = 90;
+        }
+
+        private void Update()
+        {
+            for (var i = 0; i < _executes.Count; i++)
+            {
+                var updatable = _executes[i];
+                updatable.Execute();
+            }
+        }
+
+        public void AddExecuteObject(IExecute executeGameObject)
+        {
+            _executes.Add(executeGameObject);
+        }
+
+        public void RemoveExecuteObject(IExecute executeGameObject)
+        {
+            _executes.Remove(executeGameObject);
+        }
+
+        public void ClearAllExecuteObjects()
+        {
+            _executes.Clear();
+        }
+
+        private void OnDestroy()
+        {
+            ClearAllExecuteObjects();
         }
     }
-
-    public void AddExecuteObject(IExecute executeGameObject)
-    {
-        _executes.Add(executeGameObject);
-    }
-
-    public void RemoveExecuteObject(IExecute executeGameObject)
-    {
-        _executes.Remove(executeGameObject);
-    } 
-
-    public void ClearAllExecuteObjects()
-    {
-        _executes.Clear();
-    }
-
-    private void OnDestroy()
-    {
-        ClearAllExecuteObjects();
-    }  
 }

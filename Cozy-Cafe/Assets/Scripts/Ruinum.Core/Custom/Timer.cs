@@ -4,28 +4,36 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Timer : IExecute
+namespace Ruinum.Core
 {
-    private List<Timer> _timers;
-    public float CurrentTime;
-    public Action OnTimerEnd;
-
-    public Timer(List<Timer> timers = null, float time = 1f, Action onTimerEnd = null)
+    public class Timer : IExecute
     {
-        _timers = timers;
-        CurrentTime = time;
-        OnTimerEnd = onTimerEnd;
-    }
+        private List<Timer> _timers;        
+        protected float _startingTime;
+        protected float _currentTime;
 
-    public void Execute()
-    {
-        CurrentTime -= Time.deltaTime;
+        public Action<float, float> OnTimeChange;
+        public Action OnTimerEnd;
 
-        if (CurrentTime <= 0f) { OnTimerEnd?.Invoke(); _timers.Remove(this); }
-    }
+        public Timer(List<Timer> timers = null, float time = 1f, Action onTimerEnd = null)
+        {
+            _timers = timers;
+            _startingTime = time;
+            _currentTime = _startingTime;
+            OnTimerEnd = onTimerEnd;
+        }
 
-    public void RemoveTimer()
-    {
-        _timers.Remove(this);
+        public virtual void Execute()
+        {
+            _currentTime -= Time.deltaTime;
+            OnTimeChange?.Invoke(_currentTime, _startingTime);
+
+            if (_currentTime <= 0f) { OnTimerEnd?.Invoke(); RemoveTimer(); }
+        }
+
+        protected void RemoveTimer()
+        {
+            _timers.Remove(this);
+        }
     }
 }
