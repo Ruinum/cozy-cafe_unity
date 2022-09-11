@@ -9,6 +9,8 @@ public class Customer : MonoBehaviour
     public Task task;
     public float TimeToWait;
 
+    [HideInInspector] public int _Pos;
+    
     private Timer _timerToLeave;
 
     private void Start()
@@ -31,7 +33,7 @@ public class Customer : MonoBehaviour
 
     public void ResetTimer(float chg)
     {
-        TimeToWait -= _timerToLeave.GetCurrentTime() + chg;
+        TimeToWait -= (_timerToLeave.GetCurrentTime() + chg);
         _timerToLeave.OnTimerEnd -= Leave;
         _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);
     }
