@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1019150272177822253}
   - component: {fileID: 3704344171352951906}
   m_Layer: 0
-  m_Name: Customer
+  m_Name: CustomerArticyTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,5 +122,4 @@ MonoBehaviour:
     TskNum: 0
     Duration: 0
     Dish: []
-    recept: []
-  TimeToWait: 0
+  TimeToWait: 10

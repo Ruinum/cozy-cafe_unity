@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Articy.Unity;
 using UnityEngine;
 using Ruinum.Core;
+using UnityEngine.Events;
 
-public class CustomersSystem : MonoBehaviour
-{
+public class CustomersSystem : MonoBehaviour {
     public static CustomersSystem Singletone;
 
     public float MinTime;
     public float MaxTime;
+    
+    [SerializeField] private UnityEvent<ArticyObject> onCustomerArrived;
 
     private int CustomersCount;
 
@@ -23,8 +26,9 @@ public class CustomersSystem : MonoBehaviour
 
     public void CreateNewCustomer()
     {
-        GameObject _customer = Instantiate(Resources.Load<GameObject>("Prefabs/CustomerTest"),null);
+        GameObject _customer = Instantiate(Resources.Load<GameObject>("Prefabs/CustomerArticyTest"),null);
         _customer.transform.position += (transform.right * 1.2f) * CustomersCount;
+        onCustomerArrived.Invoke(_customer.GetComponent<ArticyReference>().reference.GetObject());
         CustomersCount++;
     }
 

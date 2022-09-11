@@ -21,9 +21,11 @@ public class DialogueManager : MonoBehaviour, IArticyFlowPlayerCallbacks {
         flowPlayer = GetComponent<ArticyFlowPlayer>();
     }
 
-    public void StartDialogue() {
+    public void StartDialogue(IArticyObject aObject) {
         DialogueBoxActive = true;
         dialogueBox.SetActive(DialogueBoxActive);
+
+        flowPlayer.StartOn = aObject;
     }
 
     public void CloseDialogueBox() {
@@ -38,6 +40,6 @@ public class DialogueManager : MonoBehaviour, IArticyFlowPlayerCallbacks {
     }
 
     public void OnBranchesUpdated(IList<Branch> aBranches) {
-        throw new NotImplementedException();
+        
     }
 }
