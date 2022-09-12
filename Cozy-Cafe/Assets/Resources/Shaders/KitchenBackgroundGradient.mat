@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BackgroundGradient
+  m_Name: KitchenBackgroundGradient
   m_Shader: {fileID: 4800000, guid: 69e7c902d747ff6408ed19fdbc6a33e8, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -82,7 +82,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.69411767, b: 0.57254905, a: 1}
-    - _Color2: {r: 0.9019608, g: 0.44705883, b: 0.42352942, a: 1}
+    - _Color: {r: 0.3647059, g: 0.4627451, b: 0.40784314, a: 1}
+    - _Color2: {r: 0.13725491, g: 0.3529412, b: 0.3882353, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
