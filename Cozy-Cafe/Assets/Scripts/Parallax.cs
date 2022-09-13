@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Ruinum.Core;
 
-public class Parallax : MonoBehaviour
+public class Parallax : MonoBehaviour, IExecute
 {
     [Header("Parameters")]
     [SerializeField] float offset;
@@ -10,9 +9,13 @@ public class Parallax : MonoBehaviour
 
     private Vector2 _startPos;
 
-    private void Start() => _startPos = transform.position;
+    private void Start()
+    {
+        GameManager.Singleton.AddExecuteObject(this);
+        _startPos = transform.position;
+    }
 
-    private void Update()
+    public void Execute()
     {
         Vector2 mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
