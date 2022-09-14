@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b028353552e4fa4693fa14ffca129a2, type: 3}
+  m_Name: "Blackberry\u0421heesecakeRecept"
+  m_EditorClassIdentifier: 
+  Name: "Blackberry \u0421heesecake Recept"
+  RequestItems:
+  - {fileID: 11400000, guid: a3f3998497daf9d44bc61c48a752ac18, type: 2}
+  - {fileID: 11400000, guid: 928dc3368a259ce4b9489e8ed10812ad, type: 2}
+  - {fileID: 11400000, guid: eaadf3f0208e8604c9d9d9bfeebfdf4c, type: 2}
+  - {fileID: 11400000, guid: 8374b5e0b20e44b499273bcfa7624b70, type: 2}
+  ResultItem: {fileID: 11400000, guid: aee461f29d8868c4bb4f8ce4aa49ba68, type: 2}

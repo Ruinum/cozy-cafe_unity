@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BottomTableGradient
+  m_Name: BottomBarTableGradient
   m_Shader: {fileID: 4800000, guid: 69e7c902d747ff6408ed19fdbc6a33e8, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []

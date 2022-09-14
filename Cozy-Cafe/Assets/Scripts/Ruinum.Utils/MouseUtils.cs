@@ -13,6 +13,17 @@ namespace Ruinum.Utils
                 return hit.point;
             }
             else return Vector3.zero;
-       }
+        }
+
+        public static bool TryRaycastToMousePosition(out RaycastHit raycastHit2D)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out raycastHit2D, 999f))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
