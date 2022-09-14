@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b028353552e4fa4693fa14ffca129a2, type: 3}
+  m_Name: ChocolateMaffinRecept
+  m_EditorClassIdentifier: 
+  Name: Chocolate Maffin Recept
+  RequestItems:
+  - {fileID: 11400000, guid: fca30bd643c1373428dde372a3bd7dc6, type: 2}
+  - {fileID: 11400000, guid: 6a7201b292530cb478877551da924dd4, type: 2}
+  - {fileID: 11400000, guid: 8a9bace4258a09848b6bc407c1c739f9, type: 2}
+  - {fileID: 11400000, guid: 83dc73fefd067474b914e86607249ebc, type: 2}
+  - {fileID: 11400000, guid: eaadf3f0208e8604c9d9d9bfeebfdf4c, type: 2}
+  ResultItem: {fileID: 11400000, guid: 1826a3cb4ab0fcb4395c3c4a81f96148, type: 2}
