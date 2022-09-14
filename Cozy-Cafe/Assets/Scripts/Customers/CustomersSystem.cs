@@ -43,7 +43,7 @@ public class CustomersSystem : MonoBehaviour {
         for (; ; )
         {
             yield return new WaitForSeconds(Random.Range(MinTime, MaxTime));
-            if (CustomersCount < 1) CreateNewCustomer();
+            if (CustomersCount < 3) CreateNewCustomer();
         }
     }
 
