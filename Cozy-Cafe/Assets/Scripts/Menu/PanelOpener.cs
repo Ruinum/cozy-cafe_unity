@@ -18,20 +18,16 @@ public class PanelOpener : MonoBehaviour
     {
         if (Panel != null)
         {
-            Debug.Log('1');
-            IEnumerator ButtonDelay()
-            {
-                Debug.Log('2');
-                yield return new WaitForSeconds(2);
-                Debug.Log('3');
-                Panel.SetActive(false);
-                Debug.Log('4');
-            }
-            Debug.Log('5');
-
-
+            StartCoroutine(waiter()); 
+        
         }
 
     }
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(1);
+        Panel.SetActive(false);
+    }
+    
 
 }

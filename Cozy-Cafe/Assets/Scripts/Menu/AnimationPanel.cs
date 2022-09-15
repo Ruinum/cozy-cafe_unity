@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class AnimationPanel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    public void Animate_Panel()
+    //ЗАПУСК АНИМАЦИЙ
+    public void Animate_Panel()//Открывает (визуально) меню настроек 
     {
         GetComponent<Animation>().Play("Settings Open");
     }
-    public void Close_Panel()
+    public void Close_Panel()//Закрывает (визуально) меню настроек 
     {
         GetComponent<Animation>().Play("Settings Close");
     }
 
-    public void Animate_Transition()
+    public void Animate_Transition()//Переходит (визуально) в игру
     {
         GetComponent<Animation>().Play("Black_animation");
     }
 
-    
+
 }
