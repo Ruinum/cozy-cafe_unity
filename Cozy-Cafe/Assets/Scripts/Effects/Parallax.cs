@@ -1,21 +1,21 @@
 using UnityEngine;
 using Ruinum.Core;
 
-public class Parallax : MonoBehaviour, IExecute
+public class Parallax : Executable
 {
     [Header("Parameters")]
-    [SerializeField] float offset;
-    [SerializeField] float speed;
+    [SerializeField] private float offset;
+    [SerializeField] private float speed;
 
     private Vector3 _startPos;
 
-    private void Start()
+    public override void Start()
     {
-        GameManager.Singleton.AddExecuteObject(this);
+        base.Start();
         _startPos = transform.position;
     }
 
-    public void Execute()
+    public override void Execute()
     {
         Vector2 mousePos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 

@@ -10,14 +10,18 @@ public class InteractableInput : Executable
     {
         if (Input.GetMouseButtonDown(0))
         {
-            MouseUtils.TryRaycastToMousePosition(out var raycastHit);
-            raycastHit.collider.GetComponent<IInteractable>().LeftMouseInteract();
+            if(!MouseUtils.TryRaycast2DToMousePosition(out var raycastHit)) return;
+            if(!raycastHit.collider.TryGetComponent<IInteractable>(out var interactable)) return;
+            
+            interactable.LeftMouseInteract();
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            MouseUtils.TryRaycastToMousePosition(out var raycastHit);
-            raycastHit.collider.GetComponent<IInteractable>().RightMouseInteract();
+            if(!MouseUtils.TryRaycast2DToMousePosition(out var raycastHit)) return;
+            if (!raycastHit.collider.TryGetComponent<IInteractable>(out var interactable)) return;
+            
+            interactable.RightMouseInteract();
         }
     }
 }

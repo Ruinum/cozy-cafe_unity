@@ -4,30 +4,30 @@ using TMPro;
 
 public class MoneySystem : BaseSingleton<MoneySystem>
 {
-    [SerializeField] TextMeshProUGUI textMoneyAmount;
+    [SerializeField] private TextMeshProUGUI _textMoneyAmount;
 
-    private int currentAmount;
+    private int _currentAmount;
 
     private void Start()
     {
-        textMoneyAmount.text = currentAmount.ToString();
+        _textMoneyAmount.text = _currentAmount.ToString();
     }
 
     public void AddAmount(int amount)
     {
-        currentAmount += amount;
-        textMoneyAmount.text = currentAmount.ToString();
+        _currentAmount += amount;
+        _textMoneyAmount.text = _currentAmount.ToString();
     }
 
     public void SubtractAmount(int amount)
     {
-        currentAmount -= amount;
-        textMoneyAmount.text = currentAmount.ToString();
+        _currentAmount -= amount;
+        _textMoneyAmount.text = _currentAmount.ToString();
     }
 
     public void SubtractAmount(ItemSO item)
     {
-        currentAmount -= item.Cost;
-        textMoneyAmount.text = currentAmount.ToString();
+        _currentAmount -= item.Cost;
+        _textMoneyAmount.text = _currentAmount.ToString();
     }
 }
