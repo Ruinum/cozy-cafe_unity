@@ -4,6 +4,6 @@ using UnityEngine;
 public class ItemSO : ScriptableObject
 {
     public string Name;
-    public GameObject Prefab;
-    public int Cost;
+    [TextArea(5,5)]
+    public string Description;
 }

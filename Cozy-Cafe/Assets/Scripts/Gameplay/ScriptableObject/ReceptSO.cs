@@ -3,7 +3,6 @@
 [CreateAssetMenu(fileName = nameof(ReceptSO), menuName = EditorConstants.Data + nameof(ReceptSO))]
 public class ReceptSO : ScriptableObject
 {
-    public string Name;
     public ItemSO[] RequestItems;
     public ItemSO ResultItem;
 
