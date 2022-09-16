@@ -5,4 +5,5 @@ public class ItemSO : ScriptableObject
 {
     public string Name;
     public GameObject Prefab;
+    public int Cost;
 }
