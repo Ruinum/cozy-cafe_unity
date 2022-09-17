@@ -60,9 +60,17 @@ public class CraftInteractable : MonoBehaviour, IInteractable
 
     public void LeftMouseInteract()
     {
-        if (_currentCraftedItem == null) return;
+        if (_currentCraftedItem == null)
+        {
+            
+        }
+        else
+        {
+
+        }
 
         //InventorySystem code goes here
+
 
         _onItemTaken?.Invoke();
     }
