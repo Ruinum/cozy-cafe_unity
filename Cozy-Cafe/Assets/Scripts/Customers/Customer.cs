@@ -1,51 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using Articy.Unity;
+using Articy.Unity.Interfaces;
 using UnityEngine;
 using Ruinum.Core;
 
-public class Customer : MonoBehaviour
-{
-    public CustomerText customerText;
+public class Customer : MonoBehaviour {
+    public CustomerDialogue customerDialogue;
     public Task task;
     public float TimeToWait;
 
     [HideInInspector] public int _Pos;
-    
+
     private Timer _timerToLeave;
 
-    private void Start()
-    {
-        _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait,Leave); 
+    private void Start() {
+        _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);
     }
 
-    public void AddTask()
-    {
+    public void AddTask() {
         Debug.Log("Task Added");
-        if (task.TskNum == 0)task = TaskManager.Singletone.CreateTask(this,TimeToWait);
+        if (task.TskNum == 0) task = TaskManager.Singletone.CreateTask(this, TimeToWait);
     }
 
-    public void Leave()
-    {
+    public void Leave() {
         ReviewsSystem.Singletone.ChangeRating(task.completed ? 2 : -2);
         task = null;
         CustomersSystem.Singletone.CustomerLeave(gameObject);
     }
 
-    public void ResetTimer(float chg)
-    {
+    public void ResetTimer(float chg) {
         TimeToWait -= (_timerToLeave.GetCurrentTime() + chg);
         _timerToLeave.OnTimerEnd -= Leave;
         _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);
     }
 
-    private void OnMouseDown()
-    {
+    private void OnMouseDown() {
         AddTask();
     }
 }
+
 [System.Serializable]
-public class CustomerText
-{
-    public string FirstPgrase;
+public class CustomerDialogue {
+    [SerializeField] private List<ArticyReference> availableDialogues;
+    private int currentDialogueIndex;
+
+    public ArticyObject GetDialogue() {
+        return currentDialogueIndex < availableDialogues.Capacity
+            ? availableDialogues[currentDialogueIndex++].reference.GetObject()
+            : null;
+    }
 }

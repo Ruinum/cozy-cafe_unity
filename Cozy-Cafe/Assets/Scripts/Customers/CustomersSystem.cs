@@ -40,7 +40,7 @@ public class CustomersSystem : MonoBehaviour
         //_customer.transform.position = startPos + ((transform.right * 5.5f) * CPos);
         _customer.transform.position = startPos2;
         _customer.GetComponent<Customer>()._Pos = CPos;
-        onCustomerArrived.Invoke(_customer.GetComponent<ArticyReference>().reference.GetObject());
+        onCustomerArrived?.Invoke(_customer.GetComponent<Customer>().customerDialogue.GetDialogue());
         CustomersCount++;
         ComeAnimation2(_customer, startPos + ((transform.right * 5.5f) * CPos));
     }
