@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Articy.Unity;
 using UnityEngine;
 using Ruinum.Core;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public class CustomersSystem : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class CustomersSystem : MonoBehaviour
 
     public float MinTime;
     public float MaxTime;
+    
+    [SerializeField] private UnityEvent<ArticyObject> onCustomerArrived;
 
     private int CustomersCount;
     private bool[] Place = new bool[3];
@@ -36,6 +40,7 @@ public class CustomersSystem : MonoBehaviour
         //_customer.transform.position = startPos + ((transform.right * 5.5f) * CPos);
         _customer.transform.position = startPos2;
         _customer.GetComponent<Customer>()._Pos = CPos;
+        onCustomerArrived?.Invoke(_customer.GetComponent<Customer>().customerDialogue.GetDialogue());
         CustomersCount++;
         ComeAnimation2(_customer, startPos + ((transform.right * 5.5f) * CPos));
     }
