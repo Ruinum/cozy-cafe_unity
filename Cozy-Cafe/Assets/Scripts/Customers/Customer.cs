@@ -1,32 +1,31 @@
-using System.Collections;
 using System.Collections.Generic;
 using Articy.Unity;
-using Articy.Unity.Interfaces;
 using UnityEngine;
 using Ruinum.Core;
 
 public class Customer : MonoBehaviour {
     public CustomerDialogue customerDialogue;
-    public Task task;
+    public Task task = null;
     public float TimeToWait;
 
+    [SerializeField] private ArticyRef[] _articyRefs;
     [HideInInspector] public int _Pos;
 
     private Timer _timerToLeave;
 
-    private void Start() {
+    private void Start() {        
         _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);
     }
 
     public void AddTask() {
-        Debug.Log("Task Added");
-        if (task.TskNum == 0) task = TaskManager.Singletone.CreateTask(this, TimeToWait);
+        if (task == null) task = TaskManager.Singletone.CreateTask(this, TimeToWait);
     }
 
     public void Leave() {
         ReviewsSystem.Singletone.ChangeRating(task.completed ? 2 : -2);
+        CustomersSystem.Singleton.CustomerLeave(gameObject);
+
         task = null;
-        CustomersSystem.Singletone.CustomerLeave(gameObject);
     }
 
     public void ResetTimer(float chg) {
@@ -38,16 +37,29 @@ public class Customer : MonoBehaviour {
     private void OnMouseDown() {
         AddTask();
     }
+
+    internal void InitializeDialogue()
+    {
+        customerDialogue.Initialize(_articyRefs);
+    }
 }
 
 [System.Serializable]
 public class CustomerDialogue {
-    [SerializeField] private List<ArticyReference> availableDialogues;
+    [SerializeField] private List<ArticyRef> availableDialogues;
     private int currentDialogueIndex;
+
+    public void Initialize(ArticyRef[] articyRefs)
+    {
+        for (int i = 0; i < articyRefs.Length; i++)
+        {
+            availableDialogues.Add(articyRefs[i]);
+        }
+    }
 
     public ArticyObject GetDialogue() {
         return currentDialogueIndex < availableDialogues.Capacity
-            ? availableDialogues[currentDialogueIndex++].reference.GetObject()
+            ? availableDialogues[currentDialogueIndex++].GetObject()
             : null;
     }
 }

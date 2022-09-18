@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Liquer Syrup
   m_EditorClassIdentifier: 
   Name: Liquer Syrup
-  Prefab: {fileID: 0}
+  Description: 
+  Cost: 0
+  IsSyrup: 1
+  IsTopping: 0

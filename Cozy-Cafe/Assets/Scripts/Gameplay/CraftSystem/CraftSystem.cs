@@ -8,8 +8,9 @@ public class CraftSystem : BaseSingleton<CraftSystem>
 
     private CraftObject _craftObject;
 
-    public bool TryCreateCraftObject()
+    public bool TryCreateCraftObject(out CraftObject craftObject)
     {
+        craftObject = null;
         if (_craftObject != null) return false;
 
         var craftObjectPrefab = Instantiate(_craftObjectPrefab, _craftObjectTransorm);

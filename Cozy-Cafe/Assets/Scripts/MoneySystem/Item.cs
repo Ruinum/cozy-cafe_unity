@@ -1,19 +1,44 @@
+using Ruinum.Utils;
 using UnityEngine;
 
 
-public class Item : AnimationObject, IInteractable
+public class Item : AnimationObject
 {
     [SerializeField] private ItemSO itemSO;
 
-    public void LeftMouseInteract()
+    private Vector3 _startPosition;
+
+    private void Start()
     {
-        MoneySystem.Singleton.SubtractAmount(itemSO);
-        CraftSystem.Singleton.TryAddItem(itemSO);
-        
-        AnimationPunch();
+        _startPosition = transform.position;
     }
 
-    public void RightMouseInteract()
+    private void OnMouseDown()
     {
+        gameObject.layer = 2;
+    }
+
+    private void OnMouseDrag()
+    {
+        transform.position = new Vector3(MouseUtils.GetMouseWorld2DPosition().x, MouseUtils.GetMouseWorld2DPosition().y, transform.position.z);
+    }
+
+    private void OnMouseUp()
+    {
+        if (!MouseUtils.TryRaycast2DToMousePosition(out var raycastHit2D)) { RefreshSettings(); return; }
+        if (!raycastHit2D.collider.TryGetComponent<CraftObject>(out var craftObject)) { RefreshSettings(); return; }
+        
+        craftObject.AddItem(itemSO);
+
+        AnimationPunch();
+        RefreshSettings();
+
+        MoneySystem.Singleton.SubtractAmount(itemSO);
+    }
+
+    private void RefreshSettings()
+    {
+        transform.position = _startPosition;
+        gameObject.layer = 0;
     }
 }

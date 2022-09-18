@@ -1,19 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
-using Articy.Unity;
 using UnityEngine;
 using Ruinum.Core;
 using DG.Tweening;
-using UnityEngine.Events;
+using DialogueSystem;
 
-public class CustomersSystem : MonoBehaviour
+public class CustomersSystem : BaseSingleton<CustomersSystem>
 {
-    public static CustomersSystem Singletone;
-
     public float MinTime;
-    public float MaxTime;
-    
-    [SerializeField] private UnityEvent<ArticyObject> onCustomerArrived;
+    public float MaxTime;   
 
     private int CustomersCount;
     private bool[] Place = new bool[3];
@@ -37,15 +31,17 @@ public class CustomersSystem : MonoBehaviour
                 CPos = i;Place[i] = true;break;
             }
         }
-        //_customer.transform.position = startPos + ((transform.right * 5.5f) * CPos);
         _customer.transform.position = startPos2;
-        _customer.GetComponent<Customer>()._Pos = CPos;
-        onCustomerArrived?.Invoke(_customer.GetComponent<Customer>().customerDialogue.GetDialogue());
-        CustomersCount++;
-        ComeAnimation(_customer, startPos + ((transform.right * 5.5f) * CPos));
-    }
+        var customer = _customer.GetComponent<Customer>();
+        customer.InitializeDialogue();
+        customer._Pos = CPos;
 
-    public void ComeAnimation(GameObject @object, Vector3 _Pos)
+        DialogueManager.Singleton.StartDialogue(customer.customerDialogue.GetDialogue());     
+        CustomersCount++;
+        ComeAnimation2(_customer, startPos + ((transform.right * 5.5f) * CPos));
+    }
+ 
+    public void ComeAnimation2(GameObject @object, Vector3 _Pos)
     {
         Sequence mySequence = DOTween.Sequence();
 
@@ -67,11 +63,6 @@ public class CustomersSystem : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(MinTime, MaxTime));
             if (CustomersCount < 3) CreateNewCustomer();
         }
-    }
-
-    private void Awake()
-    {
-        Singletone = this;
     }
 }
 

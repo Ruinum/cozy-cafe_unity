@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinTime: 5
-  MaxTime: 5
+  MaxTime: 10
 --- !u!114 &8331638485784852787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a9793ae86f62b4b8c696daa4233bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textMoneyAmount: {fileID: 0}
+  _textMoneyAmount: {fileID: 0}
 --- !u!114 &3654465977942332690
 MonoBehaviour:
   m_ObjectHideFlags: 0

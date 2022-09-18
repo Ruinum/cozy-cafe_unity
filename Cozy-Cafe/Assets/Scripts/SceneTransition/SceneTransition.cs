@@ -12,6 +12,20 @@ public class SceneTransition : BaseSingleton<SceneTransition>, IExecute
     private Animator animator;
     private AsyncOperation loadingSceneOperation;
 
+
+    private void Start()
+    {
+        GameManager.Singleton.AddExecuteObject(this);
+        animator = GetComponent<Animator>();
+
+        if (shouldPlayOpeningAnimation)
+        {
+            animator.SetTrigger("sceneOpening");
+
+            shouldPlayOpeningAnimation = false;
+        }
+    }
+
     public static void SwitchToScene(string sceneName)
     {
         Singleton.animator.SetTrigger("sceneClosing");
@@ -35,16 +49,8 @@ public class SceneTransition : BaseSingleton<SceneTransition>, IExecute
         loadingSceneOperation.allowSceneActivation = true;
     }
 
-    private void Start()
+    private void OnDestroy()
     {
-        GameManager.Singleton.AddExecuteObject(this);
-        animator = GetComponent<Animator>();
-
-        if (shouldPlayOpeningAnimation)
-        {
-            animator.SetTrigger("sceneOpening");
-
-            shouldPlayOpeningAnimation = false;
-        }
+        GameManager.Singleton.RemoveExecuteObject(this);
     }
 }

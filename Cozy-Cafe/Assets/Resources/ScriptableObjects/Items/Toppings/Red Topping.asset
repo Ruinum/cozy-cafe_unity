@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Red Topping
   m_EditorClassIdentifier: 
   Name: Red Topping
-  Prefab: {fileID: 0}
+  Description: 
+  Cost: 0
+  IsSyrup: 0
+  IsTopping: 1

@@ -2,23 +2,23 @@ using System.Collections.Generic;
 using Articy.Cozy_Cafe;
 using Articy.Unity;
 using Articy.Unity.Interfaces;
+using Ruinum.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 namespace DialogueSystem {
-    public class DialogueManager : MonoBehaviour, IArticyFlowPlayerCallbacks {
+    public class DialogueManager : BaseSingleton<DialogueManager>, IArticyFlowPlayerCallbacks {
         [SerializeField] private GameObject dialogueBox;
         [SerializeField] private TextMeshProUGUI dialogueText;
         [SerializeField] private TextMeshProUGUI personName;
         [SerializeField] private RectTransform branchingPanel;
 
-        // public static DialogueManager Singletone;
-
         private ArticyFlowPlayer flowPlayer;
 
-        private void Awake() {
-            // Singletone = this;
+        private void Start()
+        {
             flowPlayer = GetComponent<ArticyFlowPlayer>();
         }
 
