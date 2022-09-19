@@ -21,9 +21,13 @@ public class CustomersSystem : MonoBehaviour
     private readonly Vector3 startPos = new Vector3(-5.5f, -2, 0);
     private readonly Vector3 startPos2 = new Vector3(-8f, -2, 0);
 
+    private bool _nextSpecialCustomer;
+    private bool _haveSpecialCustomer;
+
     private void Start()
     {
-        StartCoroutine(Generetor());
+        CreateSpecialCustomer();
+        //StartCoroutine(Generetor());
     }
 
     public void CreateNewCustomer()
@@ -37,12 +41,26 @@ public class CustomersSystem : MonoBehaviour
                 CPos = i;Place[i] = true;break;
             }
         }
-        //_customer.transform.position = startPos + ((transform.right * 5.5f) * CPos);
         _customer.transform.position = startPos2;
-        _customer.GetComponent<Customer>()._Pos = CPos;
-        onCustomerArrived?.Invoke(_customer.GetComponent<Customer>().customerDialogue.GetDialogue());
+        _customer.GetComponent<RandomCustomer>()._Pos = CPos;
+        onCustomerArrived?.Invoke(_customer.GetComponent<RandomCustomer>().customerDialogue.GetDialogue());
         CustomersCount++;
         ComeAnimation(_customer, startPos + ((transform.right * 5.5f) * CPos));
+    }
+
+    public void CreateSpecialCustomer()
+    {
+        _nextSpecialCustomer = false;
+        _haveSpecialCustomer = true;
+
+        GameObject _customer = Instantiate(Resources.Load<GameObject>("Prefabs/SpecialCustomerTest"), null);
+        _customer.GetComponent<SpecialCustomer>().Initialize();
+
+        _customer.transform.position = startPos2;
+        //onCustomerArrived?.Invoke(_customer.GetComponent<RandomCustomer>().customerDialogue.GetDialogue());
+        CustomersCount++;
+        ComeAnimation(_customer, startPos + ((transform.right * 5.5f)));
+       
     }
 
     public void ComeAnimation(GameObject @object, Vector3 _Pos)
@@ -56,7 +74,8 @@ public class CustomersSystem : MonoBehaviour
     public void CustomerLeave(GameObject customer)
     {
         CustomersCount--;
-        Place[customer.GetComponent<Customer>()._Pos] = false;
+        Place[customer.GetComponent<RandomCustomer>()._Pos] = false;
+        if (customer.GetComponent<SpecialCustomer>() && _haveSpecialCustomer) _haveSpecialCustomer = false;
         Destroy(customer);
     }
 
@@ -65,7 +84,7 @@ public class CustomersSystem : MonoBehaviour
         for (; ; )
         {
             yield return new WaitForSeconds(Random.Range(MinTime, MaxTime));
-            if (CustomersCount < 3) CreateNewCustomer();
+            if (CustomersCount < 3 && (!_haveSpecialCustomer || !_nextSpecialCustomer)) CreateNewCustomer();
         }
     }
 

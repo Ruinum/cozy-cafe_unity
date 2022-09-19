@@ -1,53 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
-using Articy.Unity;
-using Articy.Unity.Interfaces;
 using UnityEngine;
-using Ruinum.Core;
+using UnityEngine.Events;
 
-public class Customer : MonoBehaviour {
-    public CustomerDialogue customerDialogue;
+public class Customer : MonoBehaviour
+{
     public Task task;
     public float TimeToWait;
+    public int score = 2;
+    public UnityAction taskadd;
 
-    [HideInInspector] public int _Pos;
-
-    private Timer _timerToLeave;
-
-    private void Start() {
-        _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);
-    }
-
-    public void AddTask() {
-        Debug.Log("Task Added");
-        if (task.TskNum == 0) task = TaskManager.Singletone.CreateTask(this, TimeToWait);
-    }
-
-    public void Leave() {
-        ReviewsSystem.Singletone.ChangeRating(task.completed ? 2 : -2);
+    public void Leave()
+    {
+        ReviewsSystem.Singletone.ChangeRating(task.completed ? score : -score);
         task = null;
         CustomersSystem.Singletone.CustomerLeave(gameObject);
     }
-
-    public void ResetTimer(float chg) {
-        TimeToWait -= (_timerToLeave.GetCurrentTime() + chg);
-        _timerToLeave.OnTimerEnd -= Leave;
-        _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);
+    public void AddTask()
+    {
+        if (task.TskNum == 0) taskadd?.Invoke();
     }
-
-    private void OnMouseDown() {
+    private void OnMouseDown()
+    {
         AddTask();
-    }
-}
-
-[System.Serializable]
-public class CustomerDialogue {
-    [SerializeField] private List<ArticyReference> availableDialogues;
-    private int currentDialogueIndex;
-
-    public ArticyObject GetDialogue() {
-        return currentDialogueIndex < availableDialogues.Capacity
-            ? availableDialogues[currentDialogueIndex++].reference.GetObject()
-            : null;
     }
 }
