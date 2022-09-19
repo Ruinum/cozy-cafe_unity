@@ -1,5 +1,6 @@
+using Ruinum.Utils;
 using System.Collections.Generic;
-
+using UnityEngine;
 
 public class CraftObject : AnimationObject
 {
@@ -15,5 +16,10 @@ public class CraftObject : AnimationObject
         if (itemSO.IsTopping) { _sprinkles.Add(itemSO); return; }
 
         _itemSOs.Add(itemSO);
+    }
+
+    private void OnMouseDrag()
+    {
+        transform.position = new Vector3(MouseUtils.GetMouseWorld2DPosition().x, MouseUtils.GetMouseWorld2DPosition().y, transform.position.z);
     }
 }

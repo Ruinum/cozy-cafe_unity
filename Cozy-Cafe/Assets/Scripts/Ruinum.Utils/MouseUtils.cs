@@ -5,14 +5,9 @@ namespace Ruinum.Utils
 {
     public static class MouseUtils
     {
-        public static Vector3 GetMouseWorldPosition()
+        public static Vector3 GetMouseWorld2DPosition()
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out var hit, 999f))
-            {
-                return hit.point;
-            }
-            else return Vector3.zero;
+            return Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
         public static bool TryRaycast2DToMousePosition(out RaycastHit2D raycastHit2D)
