@@ -14,11 +14,11 @@ public class CustomerPatience : MonoBehaviour
     {
         yield return new WaitForSeconds(waitingTime);
         
-        NotificationSystem.Singleton.Notify("Вы слишком долго делаете заказ. Терпение клиента не вечно! Поторопитесь!");
+        NotificationSystem.Singleton.Notify("You take too long to place an order. The client's patience is not eternal! Hurry up!");
 
         yield return new WaitForSeconds(waitingTime);
 
-        NotificationSystem.Singleton.Notify("Клиента устал ждать! Он ушел...");
+        NotificationSystem.Singleton.Notify("The client is tired of waiting! He's gone...");
         MoneySystem.Singleton.SubtractAmount(amount);
     }
 }

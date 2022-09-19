@@ -6,22 +6,21 @@ using TMPro;
 
 public class NotificationSystem : BaseSingleton<NotificationSystem>
 {
-    [SerializeField] private TextMeshProUGUI notificationText;
+    //[SerializeField] private TextMeshProUGUI notificationText;
 
     private void Start() 
     { 
-        notificationText.text = "";
+        //notificationText.text = "";
     }
 
     public void Notify(string text)
     {
-        notificationText.text = text;
-        StartCoroutine(ShowNotification());
-    }
+        //notificationText.text = text;
+        //StartCoroutine(ShowNotification());
 
-    public IEnumerator ShowNotification()
-    {
-        yield return new WaitForSeconds(3);
-        notificationText.text = "";
+        GameObject not = Instantiate(Resources.Load<GameObject>("Prefabs/Notification"), null);
+        not.transform.SetParent(gameObject.transform, false);
+
+        not.GetComponentInChildren<TextMeshProUGUI>().text = text;
     }
 }
