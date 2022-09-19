@@ -17,7 +17,7 @@ public class Task
     {
         for (int i = 0; i < Dish.Count; i++)
         {
-            if(item == Dish[i].Item)
+            if (item == Dish[i].Item)
             {
                 Dish[i]._isHave = true;
                 break;

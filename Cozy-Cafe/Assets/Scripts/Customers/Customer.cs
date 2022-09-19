@@ -12,13 +12,14 @@ public class Customer : MonoBehaviour {
     [HideInInspector] public int _Pos;
 
     private Timer _timerToLeave;
+    private bool _isTaskCreated = false;
 
     private void Start() {        
         _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);
     }
 
     public void AddTask() {
-        if (task == null) task = TaskManager.Singletone.CreateTask(this, TimeToWait);
+        if (!_isTaskCreated) { task = TaskManager.Singleton.CreateTask(this, TimeToWait); _isTaskCreated = true; }
     }
 
     public void Leave() {

@@ -26,14 +26,25 @@ public class Item : AnimationObject
     private void OnMouseUp()
     {
         if (!MouseUtils.TryRaycast2DToMousePosition(out var raycastHit2D)) { RefreshSettings(); return; }
-        if (!raycastHit2D.collider.TryGetComponent<CraftObject>(out var craftObject)) { RefreshSettings(); return; }
-        
-        craftObject.AddItem(itemSO);
+        if (raycastHit2D.collider.TryGetComponent<CraftObject>(out var craftObject))
+        {
+            craftObject.AddItem(itemSO);
 
-        AnimationPunch();
-        RefreshSettings();
+            AnimationPunch();
+            RefreshSettings();
 
-        MoneySystem.Singleton.SubtractAmount(itemSO);
+            MoneySystem.Singleton.SubtractAmount(itemSO);
+        }
+
+        if (raycastHit2D.collider.TryGetComponent<Customer>(out var customer))
+        {
+            customer.task.AddItem(itemSO);
+
+            AnimationPunch();
+            RefreshSettings();
+
+            MoneySystem.Singleton.SubtractAmount(itemSO);
+        }
     }
 
     private void RefreshSettings()

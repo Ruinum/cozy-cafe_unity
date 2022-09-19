@@ -3,8 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(CraftObject))]
-public class ItemUI : MonoBehaviour
+public class CraftObjectUI : MonoBehaviour
 {
+    [SerializeField] private Transform _canvasTransform;
     [SerializeField] private GameObject _layoutPrefab;
     [SerializeField] private GameObject _itemIcon;
 
@@ -16,7 +17,18 @@ public class ItemUI : MonoBehaviour
     private void Start()
     {
         _currentObject = GetComponent<CraftObject>();
-        _createdLayout = Instantiate(_layoutPrefab, transform);
+        _createdLayout = Instantiate(_layoutPrefab, _canvasTransform);
+        _createdLayout.SetActive(false);
+    }
+
+    private void OnMouseEnter()
+    {
+        Show();
+    }
+
+    private void OnMouseExit()
+    {
+        Hide();
     }
 
     private void Show()

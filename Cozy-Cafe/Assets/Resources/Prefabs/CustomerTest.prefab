@@ -124,11 +124,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d340b411dab2b52498f9915b62785235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerText:
-    FirstPgrase: 
+  customerDialogue:
+    availableDialogues: []
   task:
     completed: 0
     TskNum: 0
     Duration: 0
     Dish: []
-  TimeToWait: 10
+  TimeToWait: 40
+  _articyRefs: []
+  _Pos: 0
+  _Pos: 0

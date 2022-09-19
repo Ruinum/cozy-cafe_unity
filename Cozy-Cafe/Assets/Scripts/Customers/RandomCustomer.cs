@@ -6,20 +6,20 @@ using UnityEngine;
 using Ruinum.Core;
 
 public class RandomCustomer : Customer {
-    public CustomerDialogue customerDialogue;
+    //public CustomerDialogue customerDialogue;
 
     [HideInInspector] public int _Pos;
 
     private Timer _timerToLeave;
     
-    private void Start() {
-        taskadd += RandomTask;
-        _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);
-    }
+    //private void Start() {
+    //    taskadd += RandomTask;
+    //    _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);
+    //}
 
     public void RandomTask()
     {
-        task = TaskManager.Singletone.CreateTask(this, TimeToWait);
+        task = TaskManager.Singleton.CreateTask(this, TimeToWait);
     }
 
     public void ResetTimer(float chg) {
@@ -29,14 +29,14 @@ public class RandomCustomer : Customer {
     }
 }
 
-[System.Serializable]
-public class CustomerDialogue {
-    [SerializeField] private List<ArticyReference> availableDialogues;
-    private int currentDialogueIndex;
+//[System.Serializable]
+//public class CustomerDialogue {
+//    [SerializeField] private List<ArticyReference> availableDialogues;
+//    private int currentDialogueIndex;
 
-    public ArticyObject GetDialogue() {
-        return currentDialogueIndex < availableDialogues.Capacity
-            ? availableDialogues[currentDialogueIndex++].reference.GetObject()
-            : null;
-    }
-}
+//    public ArticyObject GetDialogue() {
+//        return currentDialogueIndex < availableDialogues.Capacity
+//            ? availableDialogues[currentDialogueIndex++].reference.GetObject()
+//            : null;
+//    }
+//}

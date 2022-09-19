@@ -22,7 +22,7 @@ public class CustomersSystem : BaseSingleton<CustomersSystem>
 
     public void CreateNewCustomer()
     {
-        GameObject _customer = Instantiate(Resources.Load<GameObject>("Prefabs/CustomerArticyTest"),null);
+        GameObject _customer = Instantiate(Resources.Load<GameObject>("Prefabs/CustomerTest"),null);
         int CPos = 1;
         for (int i = 0; i < 3; i++)
         {

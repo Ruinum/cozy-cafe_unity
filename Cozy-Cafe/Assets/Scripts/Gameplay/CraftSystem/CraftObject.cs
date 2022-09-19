@@ -2,11 +2,16 @@ using Ruinum.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CraftObject : AnimationObject
 {
-    private List<ItemSO> _itemSOs = new List<ItemSO>();
+    [SerializeField] private List<ReceptSO> _recepts;
+
+    private List<ItemSO> _items = new List<ItemSO>();
     private List<ItemSO> _syrups = new List<ItemSO>();
     private List<ItemSO> _poddings = new List<ItemSO>();
+
+    private ItemSO _currentCofee;
 
     public void AddItem(ItemSO itemSO)
     {
@@ -15,7 +20,32 @@ public class CraftObject : AnimationObject
         if (itemSO.IsSyrup) { _syrups.Add(itemSO); return; }
         if (itemSO.IsTopping) { _poddings.Add(itemSO); return; }
 
-        _itemSOs.Add(itemSO);
+        _items.Add(itemSO);
+    }
+
+    public void CraftCofee()
+    {       
+        for (int i = 0; i < _recepts.Count; i++)
+        {
+            var recept = _recepts[i];
+            if (recept.RequestItems.Length != _items.Count) continue;
+            int correctItems = 0;
+            for (int j = 0; j < recept.RequestItems.Length; j++)
+            {
+                if (recept.RequestItems[j] == _items[j]) correctItems++;
+            }
+
+            if (correctItems == recept.RequestItems.Length)
+            {
+                _currentCofee = recept.ResultItem;
+                break;
+            }
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        gameObject.layer = 2;
     }
 
     private void OnMouseDrag()
@@ -23,10 +53,42 @@ public class CraftObject : AnimationObject
         transform.position = new Vector3(MouseUtils.GetMouseWorld2DPosition().x, MouseUtils.GetMouseWorld2DPosition().y, transform.position.z);
     }
 
+    private void OnMouseUp()
+    {
+        if (!MouseUtils.TryRaycast2DToMousePosition(out var raycastHit2D)) { gameObject.layer = 0; return; }
+
+        if (raycastHit2D.collider.TryGetComponent<TransformCraftObject>(out var transformCraftObject))
+        {
+            transformCraftObject.TransformObject(gameObject);
+            
+        }
+
+        if (raycastHit2D.collider.TryGetComponent<Customer>(out var customer))
+        {
+            CraftCofee();            
+
+            if (1 + _syrups.Count + _poddings.Count != customer.task.Dish.Count) { Debug.Log("Bad logic"); gameObject.layer = 0; return; }
+            
+            customer.task.AddItem(_currentCofee);
+
+            for (int i = 0; i < _syrups.Count; i++)
+            {
+                customer.task.AddItem(_syrups[i]);
+            }
+
+            for (int i = 0; i < _poddings.Count; i++)
+            {
+                customer.task.AddItem(_poddings[i]);
+            }
+        }
+
+        Destroy(gameObject);
+        gameObject.layer = 0;
+    }
 
     public List<ItemSO> GetItems()
     {
-        return _itemSOs;
+        return _items;
     }
 
     public List<ItemSO> GetSyrups()

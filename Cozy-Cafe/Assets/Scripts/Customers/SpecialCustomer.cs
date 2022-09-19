@@ -6,10 +6,10 @@ public class SpecialCustomer : Customer
 {
     public SpecialCustomerData data;
 
-    private void Start()
-    {
-        taskadd += CreateTask;
-    }
+    //private void Start()
+    //{
+    //    taskadd += CreateTask;
+    //}
 
     public void CreateTask()
     {
