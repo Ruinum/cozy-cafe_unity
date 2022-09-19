@@ -4,6 +4,7 @@ using UnityEngine;
 public class ItemSO : ScriptableObject
 {
     [Header("Main Settings")]
+    public Sprite Icon;
     public string Name;
     [TextArea(5,5)]
     public string Description;
