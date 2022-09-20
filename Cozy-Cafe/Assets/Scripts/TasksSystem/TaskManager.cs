@@ -7,13 +7,13 @@ using Ruinum.Core;
 
 public class TaskManager : BaseSingleton<TaskManager>
 {
-    public List<ScriptableObject> Cofee = new List<ScriptableObject>();
-    public List<ScriptableObject> Items = new List<ScriptableObject>();
+    private List<ScriptableObject> Coffee = new List<ScriptableObject>();
+    private List<ScriptableObject> Items = new List<ScriptableObject>();
     [Range(1, 3)] private int TasksNum = 1;
 
     private void Start()
     {
-        Cofee.AddRange(Resources.LoadAll<ScriptableObject>("ScriptableObjects/Items/Drinks"));
+        Coffee.AddRange(Resources.LoadAll<ScriptableObject>("ScriptableObjects/Items/Drinks"));
 
         Items.AddRange(Resources.LoadAll<ScriptableObject>("ScriptableObjects/Items/Dishes"));
         Items.AddRange(Resources.LoadAll<ScriptableObject>("ScriptableObjects/Items/Syrups"));
@@ -21,14 +21,14 @@ public class TaskManager : BaseSingleton<TaskManager>
     }
 
     int hardest; //1-3 repeats
-    public Task CreateTask(Customer customer,float TimeChangeValue)
+    public Task CreateTask(Customer customer)
     {
         Task _task = new Task();
         _task.Owner(customer);
         hardest = GiveDifficult();
 
         _task.Dish.Add(new Dish());
-        _task.Dish[0].Item = AddItem(Cofee);
+        _task.Dish[0].Item = AddItem(Coffee);
 
         for (int i = 1; i <= hardest; i++)
         {

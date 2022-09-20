@@ -20,7 +20,7 @@ namespace Articy.Cozy_Cafe.GlobalVariables
 {
     
     
-    [Articy.Unity.ArticyCodeGenerationHashAttribute(637984420598738044)]
+    [Articy.Unity.ArticyCodeGenerationHashAttribute(637992874924958047)]
     public class ArticyScriptFragments : BaseScriptFragments, ISerializationCallbackReceiver
     {
         

@@ -33,7 +33,7 @@ public class WeekSystem : BaseSingleton<WeekSystem>
         }
     }
 
-    private void AddDayLogic(IDayLogic dayLogic, DayType dayType)
+    public void AddDayLogic(IDayLogic dayLogic, DayType dayType)
     {
         for (int i = 0; i < _dayLogics.Count; i++)
         {
@@ -42,7 +42,7 @@ public class WeekSystem : BaseSingleton<WeekSystem>
         }
     }
 
-    private void RemoveDayLogic(IDayLogic dayLogic, DayType dayType)
+    public void RemoveDayLogic(IDayLogic dayLogic, DayType dayType)
     {
         for (int i = 0; i < _dayLogics.Count; i++)
         {

@@ -22,7 +22,7 @@ namespace Articy.Cozy_Cafe
     
     
     [Serializable()]
-    [Articy.Unity.ArticyCodeGenerationHashAttribute(637984420483399121)]
+    [Articy.Unity.ArticyCodeGenerationHashAttribute(637992874861580473)]
     public class InputPin : ArticyPrimitive, IInputPin
     {
         

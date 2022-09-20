@@ -5,23 +5,22 @@ using Ruinum.Core;
 using TMPro;
 
 public class Customer : MonoBehaviour, IExecute {
-    public CustomerDialogue customerDialogue = new CustomerDialogue();
     public Task task = null;
     public float TimeToWait;
     public float MinChangeTime;
     public float MaxChangeTime;
 
-    [SerializeField] private ArticyRef[] _articyRefs;
     [SerializeField] private GameObject _orderBubble;
     [SerializeField] private List<TextMeshProUGUI> _bubbleTextComponents;
     [SerializeField] private RectTransform patienceMeter;
 
     [HideInInspector] public int _Pos;
 
-    private Timer _timerToLeave;
-    private bool _isTaskCreated = false;
+    protected Timer _timerToLeave;
+    protected bool _isTaskCreated;
 
-    private void Start() {
+    protected void Start() {
+        Debug.Log("created new customer");
         TimeToWait += Random.Range(MinChangeTime, MaxChangeTime);
         _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);
         GameManager.Singleton.AddExecuteObject(this);
@@ -31,15 +30,16 @@ public class Customer : MonoBehaviour, IExecute {
         patienceMeter.sizeDelta = new Vector2(_timerToLeave.GetCurrentTime() / TimeToWait * 3, 0.25f);
     }
 
-    public void AddTask() {
-        if (!_isTaskCreated) {
-            task = TaskManager.Singleton.CreateTask(this, TimeToWait);
-            _isTaskCreated = true;
-            InitializeTaskUI();
-        }
+    protected virtual void AddTask() {
+        if (_isTaskCreated) return;
+        
+        task = TaskManager.Singleton.CreateTask(this);
+        _isTaskCreated = true;
+        
+        InitializeTaskUI();
     }
 
-    private void InitializeTaskUI() {
+    protected void InitializeTaskUI() {
         _orderBubble.SetActive(true);
         //0 - coffee; 1 - syrup; 2 - topping; 3-4 - dessert
         bool hasDessert = false;
@@ -85,24 +85,6 @@ public class Customer : MonoBehaviour, IExecute {
         AddTask();
     }
 
-    internal void InitializeDialogue() {
-        customerDialogue.Initialize(_articyRefs);
-    }
+    
 }
 
-public class CustomerDialogue {
-    private List<ArticyRef> availableDialogues = new List<ArticyRef>();
-    private int currentDialogueIndex;
-
-    public void Initialize(ArticyRef[] articyRefs) {
-        for (int i = 0; i < articyRefs.Length; i++) {
-            availableDialogues.Add(articyRefs[i]);
-        }
-    }
-
-    public ArticyObject GetDialogue() {
-        return currentDialogueIndex < availableDialogues.Capacity
-            ? availableDialogues[currentDialogueIndex++].GetObject()
-            : null;
-    }
-}
