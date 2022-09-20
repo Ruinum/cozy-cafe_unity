@@ -53,6 +53,11 @@ public class CraftObject : AnimationObject
         transform.position = new Vector3(MouseUtils.GetMouseWorld2DPosition().x, MouseUtils.GetMouseWorld2DPosition().y, transform.position.z);
     }
 
+    private void OnMouseExit()
+    {
+        gameObject.layer = 0;
+    }
+
     private void OnMouseUp()
     {
         if (!MouseUtils.TryRaycast2DToMousePosition(out var raycastHit2D)) { gameObject.layer = 0; return; }
@@ -60,15 +65,13 @@ public class CraftObject : AnimationObject
         if (raycastHit2D.collider.TryGetComponent<TransformCraftObject>(out var transformCraftObject))
         {
             transformCraftObject.TransformObject(gameObject);
-            
+            gameObject.layer = 0;
         }
 
         if (raycastHit2D.collider.TryGetComponent<Customer>(out var customer))
         {
-            CraftCofee();            
+            CraftCofee();
 
-            if (1 + _syrups.Count + _poddings.Count != customer.task.Dish.Count) { Debug.Log("Bad logic"); gameObject.layer = 0; return; }
-            
             customer.task.AddItem(_currentCofee);
 
             for (int i = 0; i < _syrups.Count; i++)
@@ -80,9 +83,12 @@ public class CraftObject : AnimationObject
             {
                 customer.task.AddItem(_poddings[i]);
             }
-        }
 
-        Destroy(gameObject);
+            gameObject.layer = 0;
+            customer.Leave();
+            
+            Destroy(gameObject);
+        }
         gameObject.layer = 0;
     }
 

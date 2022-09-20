@@ -136,7 +136,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 8
   m_TargetDisplay: 0
 --- !u!114 &4949422527256554355
 MonoBehaviour:
@@ -1100,7 +1100,6 @@ MonoBehaviour:
   TimeToWait: 40
   MinChangeTime: 5
   MaxChangeTime: 15
-  _articyRefs: []
   _orderBubble: {fileID: 3221200639715340431}
   _bubbleTextComponents:
   - {fileID: 7809033289892687984}

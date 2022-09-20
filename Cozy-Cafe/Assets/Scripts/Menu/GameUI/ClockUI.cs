@@ -43,10 +43,10 @@ public class ClockUI : MonoBehaviour
 
 
             float hoursPerDay = 24f;
-            clockMinHandTransform.eulerAngles = new Vector3(0, 0, -dayNormalized * rotationDegreesPerDay * hoursPerDay);
+            clockMinHandTransform.eulerAngles = new Vector3(0, 0, -dayNormalized * 360f * hoursPerDay);
 
             string hoursString = Mathf.Floor((dayNormalized * 24f + 9f)).ToString("00");
-            if (hoursString != "18")
+            if (hoursString != "19")
             {
                 string minString = Mathf.Floor(((dayNormalized * 24f) % 1f) * 60f).ToString("00");
                 string TextString = hoursString + ":" + minString;
@@ -54,7 +54,7 @@ public class ClockUI : MonoBehaviour
             }
             else
             {
-                timeText.text = "18:00";
+                timeText.text = "19:00";
                 end_of_day = true;
             }
             

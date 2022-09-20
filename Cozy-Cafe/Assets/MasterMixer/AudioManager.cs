@@ -38,4 +38,10 @@ public class AudioManager : MonoBehaviour
         mixer.SetFloat(VolumeSettings.MIXER_SFX, Mathf.Log10(sfxVolume) * 20);
         mixer.SetFloat(VolumeSettings.MIXER_AMB, Mathf.Log10(ambVolume) * 20);
     }
+
+    public AudioSource buttonClick;
+    public void ButtonClick()
+    {
+        buttonClick.Play();
+    }
 }
