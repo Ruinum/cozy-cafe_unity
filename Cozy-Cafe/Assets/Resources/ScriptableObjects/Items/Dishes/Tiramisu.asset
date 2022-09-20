@@ -18,3 +18,4 @@ MonoBehaviour:
   Cost: 10
   IsSyrup: 0
   IsTopping: 0
+  IsDessert: 1

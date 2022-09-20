@@ -8,8 +8,6 @@ using Ruinum.Core;
 public class RandomCustomer : Customer {
     //public CustomerDialogue customerDialogue;
 
-    [HideInInspector] public int _Pos;
-
     private Timer _timerToLeave;
     
     //private void Start() {

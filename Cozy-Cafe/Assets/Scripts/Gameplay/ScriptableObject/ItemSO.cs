@@ -13,4 +13,5 @@ public class ItemSO : ScriptableObject
     [Header("Tag Settings")]
     public bool IsSyrup;
     public bool IsTopping;
+    public bool IsDessert;
 }

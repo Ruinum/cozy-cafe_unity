@@ -11,10 +11,6 @@ public class TaskManager : BaseSingleton<TaskManager>
     public List<ScriptableObject> Items = new List<ScriptableObject>();
     [Range(1, 3)] private int TasksNum = 1;
 
-    public float MinChangeTime;
-    public float MaxChangeTime;
-
-
     private void Start()
     {
         Cofee.AddRange(Resources.LoadAll<ScriptableObject>("ScriptableObjects/Items/Drinks"));
@@ -41,7 +37,6 @@ public class TaskManager : BaseSingleton<TaskManager>
         }
         _task.TskNum = TasksNum;
         TasksNum++;
-        _task.Owner().TimeToWait += Random.Range(MinChangeTime, MinChangeTime);
         return _task;
     }
 
