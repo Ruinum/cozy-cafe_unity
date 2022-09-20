@@ -26,7 +26,7 @@ public class SceneTransition : BaseSingleton<SceneTransition>, IExecute
         }
     }
 
-    public static void SwitchToScene(string sceneName)
+    public void SwitchToScene(string sceneName)
     {
         Singleton.animator.SetTrigger("sceneClosing");
 

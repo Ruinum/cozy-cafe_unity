@@ -22,11 +22,11 @@ MonoBehaviour:
       _isHave: 0
     - Item: {fileID: 11400000, guid: dc46bce72e4d4874eb62f88ea6a07d6e, type: 2}
       _isHave: 0
-    - Item: {fileID: 11400000, guid: 9faa8da860b1bf84eab0d70fc0120436, type: 2}
+    - Item: {fileID: 11400000, guid: 3dc05b4fb97a1a948874c53fbe0cd7c7, type: 2}
       _isHave: 0
   dialogues:
   - instanceId: 0
     referencingMode: 0
     lowId: 291
     highId: 16777216
-  ordersNumber: 0
+  ordersNumber: 3

@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using Ruinum.Core;
 using UnityEngine;
+
 
 public class AnimationPanel : MonoBehaviour
 {
@@ -17,7 +17,6 @@ public class AnimationPanel : MonoBehaviour
     public void Animate_Transition()//Переходит (визуально) в игру
     {
         GetComponent<Animation>().Play("Black_animation");
+        TimerManager.Singleton.StartTimer(1f, () => SceneTransition.Singleton.SwitchToScene("GameplayScene"));
     }
-
-
 }
