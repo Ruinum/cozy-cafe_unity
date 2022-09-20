@@ -60,15 +60,13 @@ public class CraftObject : AnimationObject
         if (raycastHit2D.collider.TryGetComponent<TransformCraftObject>(out var transformCraftObject))
         {
             transformCraftObject.TransformObject(gameObject);
-            
+            gameObject.layer = 0;
         }
 
         if (raycastHit2D.collider.TryGetComponent<Customer>(out var customer))
         {
-            CraftCofee();            
+            CraftCofee();
 
-            if (1 + _syrups.Count + _poddings.Count != customer.task.Dish.Count) { Debug.Log("Bad logic"); gameObject.layer = 0; return; }
-            
             customer.task.AddItem(_currentCofee);
 
             for (int i = 0; i < _syrups.Count; i++)
@@ -80,9 +78,12 @@ public class CraftObject : AnimationObject
             {
                 customer.task.AddItem(_poddings[i]);
             }
-        }
 
-        Destroy(gameObject);
+            gameObject.layer = 0;
+            customer.Leave();
+            
+            Destroy(gameObject);
+        }
         gameObject.layer = 0;
     }
 

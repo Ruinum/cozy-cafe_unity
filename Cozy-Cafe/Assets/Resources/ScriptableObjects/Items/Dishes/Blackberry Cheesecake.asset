@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd937998f126f334bb40e848b2cdf9b4, type: 3}
   m_Name: Blackberry Cheesecake
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 129fc4b623e432446a497feeff61c1e9, type: 3}
   Name: Blackberry Cheesecake
   Description: 
   Cost: 0

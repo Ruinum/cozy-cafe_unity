@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class Task
 
     public List<Dish> Dish = new List<Dish>();
 
+    public Action OnTaskCompleteEvent;
+
     public void AddItem(ItemSO item)
     {
         for (int i = 0; i < Dish.Count; i++)
@@ -23,7 +26,22 @@ public class Task
                 break;
             }
         }
+
+        CheckComplete();
     }
+
+    private void CheckComplete()
+    {
+        bool isComplete = true;
+
+        for (int i = 0; i < Dish.Count; i++)
+        {
+            if (!Dish[i]._isHave) isComplete = false;
+        }
+
+        if (isComplete) { OnTaskCompleteEvent?.Invoke(); completed = true; }
+    }
+
     public Customer Owner(Customer c = null)
     {
         if (c) customer = c;
