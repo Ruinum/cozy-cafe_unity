@@ -53,6 +53,11 @@ public class CraftObject : AnimationObject
         transform.position = new Vector3(MouseUtils.GetMouseWorld2DPosition().x, MouseUtils.GetMouseWorld2DPosition().y, transform.position.z);
     }
 
+    private void OnMouseExit()
+    {
+        gameObject.layer = 0;
+    }
+
     private void OnMouseUp()
     {
         if (!MouseUtils.TryRaycast2DToMousePosition(out var raycastHit2D)) { gameObject.layer = 0; return; }

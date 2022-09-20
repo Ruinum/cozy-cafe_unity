@@ -23,6 +23,11 @@ public class Item : AnimationObject
         transform.position = new Vector3(MouseUtils.GetMouseWorld2DPosition().x, MouseUtils.GetMouseWorld2DPosition().y, transform.position.z);
     }
 
+    private void OnMouseExit()
+    {
+        RefreshSettings();
+    }
+
     private void OnMouseUp()
     {
         if (!MouseUtils.TryRaycast2DToMousePosition(out var raycastHit2D)) { RefreshSettings(); return; }
