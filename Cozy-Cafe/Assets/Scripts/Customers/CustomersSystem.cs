@@ -4,16 +4,18 @@ using UnityEngine;
 using Ruinum.Core;
 using DG.Tweening;
 using DialogueSystem;
+using Ruinum.Utils;
 
 public class CustomersSystem : BaseSingleton<CustomersSystem> {
     public float minTime;
     public float maxTime;
 
     public List<GameObject> TodaySpecialCustomers { get; set; }
-
+    
     private Dictionary<DayType, List<GameObject>> allSpecialCustomers;
     private int customersCount;
     private bool[] Place = new bool[3];
+    private float spawningProbability = 0.2f;
 
     private readonly Vector3 startPos = new Vector3(-5.5f, -2, 0);
     private readonly Vector3 startPos2 = new Vector3(-8f, -2, 0);
@@ -23,8 +25,26 @@ public class CustomersSystem : BaseSingleton<CustomersSystem> {
         StartCoroutine(Generator());
     }
 
+    private GameObject GetCustomer() {
+        if (TodaySpecialCustomers == null || TodaySpecialCustomers.Capacity <= 0)
+            return Resources.Load<GameObject>("Prefabs/CustomerTest");
+        
+        if (RandomExtentions.RandomLess(spawningProbability)) {
+            GameObject customer = TodaySpecialCustomers[0];
+            TodaySpecialCustomers.Remove(customer);
+
+            if (spawningProbability > 0.4f) spawningProbability -= 0.4f;
+                
+            return customer;
+        }
+
+        spawningProbability += 0.1f;
+        return Resources.Load<GameObject>("Prefabs/CustomerTest");
+
+    }
+
     private void CreateNewCustomer() {
-        GameObject customerGO = Instantiate(Resources.Load<GameObject>("Prefabs/SpecialCustomerTest"), null);
+        GameObject customerGO = Instantiate(GetCustomer(), null);
         int cPos = 1;
         for (int i = 0; i < 3; i++) {
             if (!Place[i]) {
