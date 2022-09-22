@@ -18,7 +18,7 @@ public class AnimationPanel : MonoBehaviour
     public void Animate_Transition()//Переходит (визуально) в игру
     {
         GetComponent<Animation>().Play("Black_animation");
-        TimerManager.Singleton.StartTimer(1, () => SceneTransition.Singleton.SwitchToScene("GameplayScene"));
+        TimerManager.Singleton.StartTimer(1, () => SceneTransition.Singleton.SwitchToScene("Gameplay_Core"));
     }
 
     

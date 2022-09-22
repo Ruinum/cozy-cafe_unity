@@ -3,10 +3,11 @@ using Ruinum.Core;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class SceneTransition : BaseSingleton<SceneTransition>, IExecute
 {
-    [SerializeField] private Text LoadingPercentage;
+    [SerializeField] private TMP_Text LoadingPercentage;
 
     public GameObject SwithDayPanel;
 
@@ -29,7 +30,7 @@ public class SceneTransition : BaseSingleton<SceneTransition>, IExecute
         }
     }
 
-    public void SwitchToScene(string sceneName = "GameplayScene")
+    public void SwitchToScene(string sceneName = "Gameplay_Core")
     {
 
         Singleton.animator.SetTrigger("sceneClosing");

@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 using TMPro;
-using Ruinum.Core;
+
 
 public class ClockUI : MonoBehaviour
 {
-    public const float IRL_secs_per_ingame_day = 10f; //1 день в игре = 5 минут 300
+    public const float IRL_secs_per_ingame_day = 300f; //1 день в игре = 5 минут 300
 
     public Transform clockHourHandTransform;
     public Transform clockMinHandTransform;
@@ -75,5 +73,4 @@ public class ClockUI : MonoBehaviour
         WeekSystem.Singleton.AddDay();
         WeekSystem.Singleton.ChangeDay();
     }
-
 }

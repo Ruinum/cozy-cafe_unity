@@ -37,7 +37,7 @@ public class Customer : Executable
 
     public override void Execute()
     {
-        patienceMeter.sizeDelta = new Vector2(_timerToLeave.GetCurrentTime() / TimeToWait * 3, 0.25f);
+        //patienceMeter.sizeDelta = new Vector2(_timerToLeave.GetCurrentTime() / TimeToWait * 3, 0.25f);
     }
 
     protected virtual void AddTask()
@@ -93,6 +93,9 @@ public class Customer : Executable
     {
         ReviewsSystem.Singletone.ChangeRating(task.completed ? 2 : -2);
         CustomersSystem.Singleton.CustomerLeave(gameObject);
+
+        int randomMoney = (int)(UnityEngine.Random.Range(_minRandom, _maxRandom) + _constantMoney);
+        MoneySystem.Singleton.AddAmount(task.completed ? randomMoney : -randomMoney);
 
         GameManager.Singleton.RemoveExecuteObject(this);
 

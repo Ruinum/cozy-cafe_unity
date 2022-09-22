@@ -8,7 +8,7 @@ public class MoneySystem : BaseSingleton<MoneySystem>
     [SerializeField] private GameObject _popupUi;
     [SerializeField] private Transform _transform;
 
-    private int _currentAmount;
+    private int _currentAmount = 3000;
 
     private void Start()
     {

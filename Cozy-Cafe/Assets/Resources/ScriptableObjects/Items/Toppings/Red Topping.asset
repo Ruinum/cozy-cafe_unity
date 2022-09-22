@@ -15,7 +15,7 @@ MonoBehaviour:
   Icon: {fileID: -638068630, guid: fd2c6a791cde13b4db1de8766ec5a897, type: 3}
   Name: Red Topping
   Description: 
-  Cost: 0
+  Cost: 10
   IsSyrup: 0
   IsTopping: 1
   IsDessert: 0

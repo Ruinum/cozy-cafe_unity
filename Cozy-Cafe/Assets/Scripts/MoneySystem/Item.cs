@@ -29,13 +29,15 @@ public class Item : AnimationObject
     private void OnMouseUp()
     {
         if (!MouseUtils.TryRaycast2DToMousePosition(out var raycastHit2D)) { RefreshSettings(); return; }
-        if (raycastHit2D.collider.TryGetComponent<CraftObject>(out var craftObject) && !_itemSO.IsDessert)
+        if (raycastHit2D.collider.TryGetComponent<CraftObject>(out var craftObject) && !_itemSO.IsDessert && craftObject.GetItems().Count < 4)
         {
             craftObject.AddItem(_itemSO);
 
             AnimationPunch();
 
             MoneySystem.Singleton.SubtractAmount(_itemSO);
+
+            RefreshSettings();
         }
 
         if (raycastHit2D.collider.TryGetComponent<Customer>(out var customer))
@@ -45,6 +47,8 @@ public class Item : AnimationObject
             AnimationPunch();
 
             MoneySystem.Singleton.SubtractAmount(_itemSO);
+
+            RefreshSettings();
         }
 
         RefreshSettings();

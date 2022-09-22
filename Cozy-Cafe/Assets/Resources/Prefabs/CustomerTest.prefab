@@ -1108,6 +1108,9 @@ MonoBehaviour:
   - {fileID: 4780592462386907065}
   - {fileID: 7719526520021904374}
   patienceMeter: {fileID: 4521912100421571468}
+  _minRandom: 5
+  _maxRandom: 15
+  _constantMoney: 20
   _Pos: 0
 --- !u!1 &8631082171572291196
 GameObject:

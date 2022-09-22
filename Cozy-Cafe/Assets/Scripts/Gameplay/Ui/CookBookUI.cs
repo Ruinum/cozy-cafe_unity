@@ -23,8 +23,8 @@ public class CookBookUI : MonoBehaviour
 
     public void Open()
     {
-        gameObject.SetActive(true);
-        SetInformation(_receptSOs[_index]);
+        gameObject.SetActive(!gameObject.activeSelf);
+        SetInformation(_receptSOs[Mathf.Min(_index, _receptSOs.Length)]);
     }
 
     public void NextRecept()

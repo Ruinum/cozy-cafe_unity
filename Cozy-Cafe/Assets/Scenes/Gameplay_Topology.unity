@@ -2006,7 +2006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609999420}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.5, y: -0.5, z: 1.25}
+  m_LocalPosition: {x: -4.42, y: -0.48, z: 1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2993,7 +2993,7 @@ GameObject:
   - component: {fileID: 1046181143}
   - component: {fileID: 1046181142}
   - component: {fileID: 1046181141}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: PlacePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6093,7 +6093,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2054708613}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: TransformPosition
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}

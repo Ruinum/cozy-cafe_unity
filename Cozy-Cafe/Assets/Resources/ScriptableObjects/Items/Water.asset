@@ -15,7 +15,7 @@ MonoBehaviour:
   Icon: {fileID: 1450837016, guid: 66b13345a710ac64d89ed5134c4c579f, type: 3}
   Name: Water
   Description: 
-  Cost: 0
+  Cost: 1
   IsSyrup: 0
   IsTopping: 0
   IsDessert: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   Icon: {fileID: 62258364, guid: 160e0588802b8fb42a02461544c49d08, type: 3}
   Name: Vanilla Syrup
   Description: 
-  Cost: 0
+  Cost: 15
   IsSyrup: 1
   IsTopping: 0
   IsDessert: 0

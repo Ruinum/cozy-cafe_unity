@@ -1,20 +1,9 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
-using Ruinum.Core;
 
-
-public class GameplaySceneLoader : BaseSingleton<GameplaySceneLoader>
+public class GameplaySceneLoader : MonoBehaviour
 {
-    [SerializeField] private int _topologySceneIndex;
-
-    protected override void Awake()
-    {
-        base.Awake();
-
-        DontDestroyOnLoad(gameObject);
-    }
-
     private void Start()
     {
         LoadGameplay();
@@ -22,6 +11,6 @@ public class GameplaySceneLoader : BaseSingleton<GameplaySceneLoader>
 
     public void LoadGameplay()
     {
-        SceneManager.LoadSceneAsync(_topologySceneIndex, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("Gameplay_Topology", LoadSceneMode.Additive);
     }
 }
