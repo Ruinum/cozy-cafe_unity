@@ -5,12 +5,15 @@ using UnityEngine;
 public class Item : AnimationObject
 {
     [SerializeField] private ItemSO itemSO;
+    [SerializeField] GameObject _hintCanvas;
 
     private Vector3 _startPosition;
 
     private void Start()
     {
         _startPosition = transform.position;
+        
+        _hintCanvas.SetActive(false);
     }
 
     private void OnMouseDown()
@@ -45,6 +48,16 @@ public class Item : AnimationObject
         }
 
         RefreshSettings();
+    }
+
+    private void OnMouseEnter()
+    {
+        _hintCanvas.SetActive(true);
+    }
+
+    private void OnMouseExit()
+    {
+        _hintCanvas.SetActive(false);
     }
 
     private void RefreshSettings()

@@ -5,9 +5,14 @@ using UnityEngine;
 public class CreateObject : MonoBehaviour
 {
     [SerializeField] private GameObject _object;
+    [SerializeField] GameObject _hintCanvas;
 
     private GameObject _createdObject;
 
+    private void Start()
+    {
+        _hintCanvas.SetActive(false);
+    }
 
     private void OnMouseDown()
     {
@@ -24,5 +29,15 @@ public class CreateObject : MonoBehaviour
     private void OnMouseUp()
     {
         _createdObject = null;
+    }
+
+    private void OnMouseEnter()
+    {
+        _hintCanvas.SetActive(true);
+    }
+
+    private void OnMouseExit()
+    {
+        _hintCanvas.SetActive(false);
     }
 }

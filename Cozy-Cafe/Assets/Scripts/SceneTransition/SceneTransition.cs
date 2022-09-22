@@ -2,10 +2,13 @@ using UnityEngine;
 using Ruinum.Core;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class SceneTransition : BaseSingleton<SceneTransition>, IExecute
 {
     [SerializeField] private Text LoadingPercentage;
+
+    public GameObject SwithDayPanel;
 
     private static bool shouldPlayOpeningAnimation = false;
 
@@ -26,8 +29,9 @@ public class SceneTransition : BaseSingleton<SceneTransition>, IExecute
         }
     }
 
-    public void SwitchToScene(string sceneName)
+    public void SwitchToScene(string sceneName = "GameplayScene")
     {
+
         Singleton.animator.SetTrigger("sceneClosing");
 
         Singleton.loadingSceneOperation = SceneManager.LoadSceneAsync(sceneName);
@@ -47,6 +51,14 @@ public class SceneTransition : BaseSingleton<SceneTransition>, IExecute
     {
         shouldPlayOpeningAnimation = true;
         loadingSceneOperation.allowSceneActivation = true;
+    }
+
+    public void DayChange()
+    {
+        Sequence mySequence = DOTween.Sequence();
+        mySequence.Append(SwithDayPanel.GetComponent<Image>().DOFade(1,7));
+        SwithDayPanel.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().DOFade(1,5);
+        TimerManager.Singleton.StartTimer(7, () => SwitchToScene());
     }
 
     private void OnDestroy()

@@ -18,6 +18,8 @@ namespace Ruinum.Core
             for (var i = 0; i < _executes.Count; i++)
             {
                 var updatable = _executes[i];
+                if (updatable == null) _executes.Remove(updatable);
+
                 updatable.Execute();
             }
         }

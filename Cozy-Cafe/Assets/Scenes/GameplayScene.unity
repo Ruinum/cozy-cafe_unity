@@ -595,6 +595,7 @@ GameObject:
   - component: {fileID: 69150378}
   - component: {fileID: 69150377}
   - component: {fileID: 69150376}
+  - component: {fileID: 69150379}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -651,6 +652,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &69150379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69150375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c55ddbc2f2716240aadc588af8a8cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &84977492
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,6 +715,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: a12a0f2a4cdf10144aff3adc20442979, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!61 &84977495
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -924,6 +938,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: aee461f29d8868c4bb4f8ce4aa49ba68, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &128883930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1100,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: 540da0fe3a1e4ad45a513218e61a6457, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &139659199
 GameObject:
   m_ObjectHideFlags: 0
@@ -2279,6 +2295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _object: {fileID: 1956147288477599553, guid: 97a77e1c9603cc34dae1b42386225d7c, type: 3}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &245249742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2392,6 +2409,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: 0c99028f435c8e847b8264d5194b7d66, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &265975214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3317,6 +3335,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: 8a9bace4258a09848b6bc407c1c739f9, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!61 &377683954
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3723,6 +3742,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: 638274d2b229d27418fa0e66ed299558, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &415019586
 GameObject:
   m_ObjectHideFlags: 0
@@ -4910,6 +4930,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: 8b07700340ef9694dae51892334ce652, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &549892803
 GameObject:
   m_ObjectHideFlags: 0
@@ -6101,6 +6122,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: 9d8a3b4ca556ffc4786fabbd921e550f, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &702184561
 GameObject:
   m_ObjectHideFlags: 0
@@ -10829,6 +10851,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: 9105d675b28e4ba4caafc9fc8406f270, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &1380685764
 GameObject:
   m_ObjectHideFlags: 0
@@ -11092,6 +11115,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: 1826a3cb4ab0fcb4395c3c4a81f96148, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &1393093974
 GameObject:
   m_ObjectHideFlags: 0
@@ -11170,6 +11194,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: 92e4a547abfc09947a6ee41b5ce55f7b, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &1407535906
 GameObject:
   m_ObjectHideFlags: 0
@@ -11714,6 +11739,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: 8913fb944250ed942aaae652b48bf7d0, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &1472851587
 GameObject:
   m_ObjectHideFlags: 0
@@ -13214,6 +13240,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: 3dc05b4fb97a1a948874c53fbe0cd7c7, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &1701937736
 GameObject:
   m_ObjectHideFlags: 0
@@ -13292,6 +13319,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: dc46bce72e4d4874eb62f88ea6a07d6e, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &1707172427
 GameObject:
   m_ObjectHideFlags: 0
@@ -13729,6 +13757,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: d8c56573096f63246bda792c6034f5ac, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &1745535840
 GameObject:
   m_ObjectHideFlags: 0
@@ -14063,6 +14092,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: 7f68ea961918dfa42a5c1438b8dd7465, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &1779058783
 GameObject:
   m_ObjectHideFlags: 0
@@ -17008,6 +17038,7 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: 2d4fd9705ed79574ab348cabd6ae3036, type: 2}
+  _hintCanvas: {fileID: 0}
 --- !u!1 &2139687212
 GameObject:
   m_ObjectHideFlags: 0
@@ -17170,3 +17201,4 @@ MonoBehaviour:
   _vibratio: 2
   _elastic: 0.2
   itemSO: {fileID: 11400000, guid: acaad685a48037c4fbc71da0ff31a574, type: 2}
+  _hintCanvas: {fileID: 0}

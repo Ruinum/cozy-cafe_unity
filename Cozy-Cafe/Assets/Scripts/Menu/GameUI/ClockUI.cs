@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Ruinum.Core;
 
 public class ClockUI : MonoBehaviour
 {
-    public const float IRL_secs_per_ingame_day = 300f; //1 день в игре = 5 минут
+    public const float IRL_secs_per_ingame_day = 10f; //1 день в игре = 5 минут 300
 
     public Transform clockHourHandTransform;
     public Transform clockMinHandTransform;
@@ -17,17 +18,19 @@ public class ClockUI : MonoBehaviour
     public float day;
     public int theCurrentDay;
     public bool end_of_day;
+    private bool _nextdaystarted;
 
-
-
-    public void Awake()
+    public void Start()
     {
         clockHourHandTransform = transform.Find("Hour_hand");
         clockMinHandTransform = transform.Find("Min_hand");
         end_of_day = false;
-        theCurrentDay = 1;
-
+        theCurrentDay = WeekSystem.Singleton.GetDayNum();
+        CurrentDayText.text = theCurrentDay.ToString();
+        string[] weekdays = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+        MonthText.text = weekdays[(theCurrentDay - 1) % 7];
     }
+
 
     public void Update()
     {
@@ -61,13 +64,16 @@ public class ClockUI : MonoBehaviour
         }
         else
         {
-            theCurrentDay += 1; //Обновление дня
-            end_of_day = false;
-            day = 0;
-            CurrentDayText.text = theCurrentDay.ToString();
-            string[] weekdays = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
-            MonthText.text = weekdays[(theCurrentDay - 1) % 7];
+            
+            if (!_nextdaystarted) { EndOfDay(); _nextdaystarted = true; }
         }
 
     }
+
+    public void EndOfDay()
+    {
+        WeekSystem.Singleton.AddDay();
+        WeekSystem.Singleton.ChangeDay();
+    }
+
 }

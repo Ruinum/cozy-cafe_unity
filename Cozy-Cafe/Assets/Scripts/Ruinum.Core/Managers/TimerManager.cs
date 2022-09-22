@@ -15,6 +15,7 @@ namespace Ruinum.Core
 
         public Timer StartTimer(float time, Action OnTimerEnd)
         {
+
             var timer = new Timer(_timers, time, OnTimerEnd);
             _timers.Add(timer);
 
