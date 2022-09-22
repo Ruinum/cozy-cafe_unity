@@ -15,6 +15,11 @@ public class Customer : Executable
     [SerializeField] private List<TextMeshProUGUI> _bubbleTextComponents;
     [SerializeField] private RectTransform patienceMeter;
 
+    [Header("Money Reward Settigns")]
+    [SerializeField] private float _minRandom;
+    [SerializeField] private float _maxRandom;
+    [SerializeField] private float _constantMoney;
+
     [HideInInspector] public int _Pos;
 
     protected Timer _timerToLeave;

@@ -93,9 +93,9 @@ public class CustomersSystem : BaseSingleton<CustomersSystem> {
     }
 
     private void SubscribeSchedule() {
-        foreach (var (key, value) in allSpecialCustomers) {
-            WeekSystem.Singleton.AddDayLogic(new CustomersSchedule() {Customers = value}, key);
-        }
+        //foreach (var (key, value) in allSpecialCustomers) {
+        //    WeekSystem.Singleton.AddDayLogic(new CustomersSchedule() {Customers = value}, key);
+        //}
     }
 }
 
