@@ -20,7 +20,7 @@ public class MoneySystem : BaseSingleton<MoneySystem>
         _currentAmount += amount;
         _textMoneyAmount.text = $"Money: {_currentAmount}";
 
-        CreatePopup($"+{amount}", Color.green);
+        CreatePopup($"{amount}", Color.green);
     }
 
     public void SubtractAmount(int amount)
@@ -28,7 +28,7 @@ public class MoneySystem : BaseSingleton<MoneySystem>
         _currentAmount -= amount;
         _textMoneyAmount.text = $"Money: {_currentAmount}";
 
-        CreatePopup($"-{amount}", Color.red);
+        CreatePopup($"{amount}", Color.red);
     }
 
     public void SubtractAmount(ItemSO item)

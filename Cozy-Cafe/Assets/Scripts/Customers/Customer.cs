@@ -94,7 +94,9 @@ public class Customer : Executable
         CustomersSystem.Singleton.CustomerLeave(gameObject);
 
         int randomMoney = (int)(UnityEngine.Random.Range(_minRandom, _maxRandom) + _constantMoney);
-        MoneySystem.Singleton.AddAmount(task.completed ? randomMoney : -randomMoney);
+        
+        if (task.completed) MoneySystem.Singleton.AddAmount(randomMoney);
+        else MoneySystem.Singleton.SubtractAmount(randomMoney);
 
         GameManager.Singleton.RemoveExecuteObject(this);
 

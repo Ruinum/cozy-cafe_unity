@@ -60,6 +60,8 @@ public class CraftObject : AnimationObject
 
     private void OnMouseUp()
     {
+        gameObject.layer = 2;
+
         if (!MouseUtils.TryRaycast2DToMousePosition(out var raycastHit2D)) { gameObject.layer = 0; return; }
 
         if (raycastHit2D.collider.TryGetComponent<TransformCraftObject>(out var transformCraftObject))

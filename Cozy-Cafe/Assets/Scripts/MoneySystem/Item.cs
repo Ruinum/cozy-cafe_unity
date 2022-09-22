@@ -2,7 +2,7 @@ using Ruinum.Utils;
 using UnityEngine;
 
 
-public class Item : AnimationObject
+public partial class Item : AnimationObject
 {
     [SerializeField] private ItemSO _itemSO;
     [SerializeField] GameObject _hintCanvas;
@@ -12,7 +12,7 @@ public class Item : AnimationObject
     private void Start()
     {
         _startPosition = transform.position;
-        
+
         _hintCanvas.SetActive(false);
     }
 
@@ -49,6 +49,11 @@ public class Item : AnimationObject
             MoneySystem.Singleton.SubtractAmount(_itemSO);
 
             RefreshSettings();
+        }
+
+        if (raycastHit2D.collider.TryGetComponent<TrashCan>(out var trash))
+        {
+            Destroy(gameObject);
         }
 
         RefreshSettings();
