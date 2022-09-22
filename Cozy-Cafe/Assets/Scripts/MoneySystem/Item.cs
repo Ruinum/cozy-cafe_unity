@@ -23,11 +23,6 @@ public class Item : AnimationObject
         transform.position = new Vector3(MouseUtils.GetMouseWorld2DPosition().x, MouseUtils.GetMouseWorld2DPosition().y, transform.position.z);
     }
 
-    private void OnMouseExit()
-    {
-        RefreshSettings();
-    }
-
     private void OnMouseUp()
     {
         if (!MouseUtils.TryRaycast2DToMousePosition(out var raycastHit2D)) { RefreshSettings(); return; }
@@ -36,7 +31,6 @@ public class Item : AnimationObject
             craftObject.AddItem(itemSO);
 
             AnimationPunch();
-            RefreshSettings();
 
             MoneySystem.Singleton.SubtractAmount(itemSO);
         }
@@ -46,10 +40,11 @@ public class Item : AnimationObject
             customer.task.AddItem(itemSO);
 
             AnimationPunch();
-            RefreshSettings();
 
             MoneySystem.Singleton.SubtractAmount(itemSO);
         }
+
+        RefreshSettings();
     }
 
     private void RefreshSettings()

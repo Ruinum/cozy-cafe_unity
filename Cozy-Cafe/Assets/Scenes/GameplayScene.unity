@@ -329,7 +329,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1277963298}
-        m_TargetAssemblyTypeName: Img_CB_change, Assembly-CSharp
+        m_TargetAssemblyTypeName: CookBookUI, Assembly-CSharp
         m_MethodName: PreviousRecept
         m_Mode: 1
         m_Arguments:
@@ -5346,6 +5346,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &592832170 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 814456942590672644, guid: 8f0d760365c07504db036a4d1b2abd06, type: 3}
+  m_PrefabInstance: {fileID: 801364191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &598743302
 GameObject:
   m_ObjectHideFlags: 0
@@ -5733,6 +5738,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635723364}
   m_CullTransparentMesh: 1
+--- !u!1 &658262895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 658262896}
+  m_Layer: 0
+  m_Name: MoneyPopupTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &658262896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658262895}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7, y: 3.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 592832170}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &661535462
 GameObject:
   m_ObjectHideFlags: 0
@@ -6983,6 +7019,14 @@ PrefabInstance:
       propertyPath: Items.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8331638485784852787, guid: 8f0d760365c07504db036a4d1b2abd06, type: 3}
+      propertyPath: _popupUi
+      value: 
+      objectReference: {fileID: 1703380609481065505, guid: 4c3a3e17479ac2349b39c9c2c9820dcc, type: 3}
+    - target: {fileID: 8331638485784852787, guid: 8f0d760365c07504db036a4d1b2abd06, type: 3}
+      propertyPath: _transform
+      value: 
+      objectReference: {fileID: 658262896}
     - target: {fileID: 8331638485784852787, guid: 8f0d760365c07504db036a4d1b2abd06, type: 3}
       propertyPath: _textMoneyAmount
       value: 
@@ -8508,7 +8552,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1277963298}
-        m_TargetAssemblyTypeName: Img_CB_change, Assembly-CSharp
+        m_TargetAssemblyTypeName: CookBookUI, Assembly-CSharp
         m_MethodName: NextRecept
         m_Mode: 1
         m_Arguments:
@@ -10407,10 +10451,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1277963294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daabc13793b1a9248a901b47cded1705, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d11d1756b73e1c4a8bb8d5661e4f3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _image: {fileID: 507387630}
+  _image: {fileID: 39692918}
   _name: {fileID: 1934536288}
   _description: {fileID: 1498762265}
   _layoutGroup: {fileID: 1779058784}
@@ -14054,7 +14098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 238.67484, y: 13.4339905}
+  m_AnchoredPosition: {x: 238.67484, y: 13.43396}
   m_SizeDelta: {x: -731.064, y: -84.247}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1779058785
@@ -14881,7 +14925,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1277963298}
-        m_TargetAssemblyTypeName: Img_CB_change, Assembly-CSharp
+        m_TargetAssemblyTypeName: CookBookUI, Assembly-CSharp
         m_MethodName: Open
         m_Mode: 1
         m_Arguments:

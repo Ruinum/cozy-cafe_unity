@@ -41,7 +41,7 @@ public class MoneySystem : BaseSingleton<MoneySystem>
 
     private void CreatePopup(string value, Color color)
     {
-        var text = Instantiate(_popupUi, _transform).GetComponent<TMP_Text>();
+        var text = Instantiate(_popupUi, _transform).GetComponentInObject<TMP_Text>();
         text.text = value;
         text.color = color;
     }

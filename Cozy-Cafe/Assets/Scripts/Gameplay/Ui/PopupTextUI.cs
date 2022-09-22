@@ -20,6 +20,6 @@ public class PopupTextUI : MonoBehaviour
         transform.DOScale(new Vector3(transform.localScale.x + _addedScale, transform.localScale.y + _addedScale, transform.localScale.z), _duration);
         _tmpText.DOFade(0, _fadeDuration);
 
-        Destroy(transform.parent, 2f);
+        Destroy(gameObject, 2f);
     }
 }
