@@ -7,7 +7,6 @@ using Ruinum.Core;
 public class GameplaySceneLoader : BaseSingleton<GameplaySceneLoader>
 {
     [SerializeField] private int _topologySceneIndex;
-    [SerializeField] private int _uiSceneIndex;
 
     protected override void Awake()
     {
@@ -16,9 +15,13 @@ public class GameplaySceneLoader : BaseSingleton<GameplaySceneLoader>
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Start()
+    {
+        LoadGameplay();
+    }
+
     public void LoadGameplay()
     {
         SceneManager.LoadSceneAsync(_topologySceneIndex, LoadSceneMode.Additive);
-        SceneManager.LoadSceneAsync(_uiSceneIndex, LoadSceneMode.Additive);
     }
 }
