@@ -10987,7 +10987,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b341e9c0010905348b78b7e701b76311, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15628,6 +15628,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2039314612 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 814456942590672641, guid: 8f0d760365c07504db036a4d1b2abd06, type: 3}
+  m_PrefabInstance: {fileID: 801364191}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2039314619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039314612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30b8570572ec6640bceee01353020b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTime: 5
+  repeatTime: 30
+  positions:
+  - {x: 0, y: 0}
+  - {x: -7, y: 0}
 --- !u!1 &2039409084
 GameObject:
   m_ObjectHideFlags: 0

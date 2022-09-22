@@ -19,7 +19,7 @@ public class Notification : MonoBehaviour
         StartCoroutine(ShowNotification());
     }
 
-    public IEnumerator ShowNotification()
+    private IEnumerator ShowNotification()
     {
         yield return new WaitForSeconds(existTime);
         animator.SetTrigger("out");
