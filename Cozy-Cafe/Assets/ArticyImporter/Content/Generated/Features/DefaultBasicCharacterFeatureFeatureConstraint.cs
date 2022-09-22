@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Articy.Cozy_Cafe;
+using Articy.Cozy_Cafe_atricy;
 using Articy.Unity;
 using Articy.Unity.Constraints;
 using Articy.Unity.Interfaces;
@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Articy.Cozy_Cafe.Features
+namespace Articy.Cozy_Cafe_atricy.Features
 {
     
     

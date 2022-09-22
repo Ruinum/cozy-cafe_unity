@@ -8,8 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Articy.Cozy_Cafe;
-using Articy.Cozy_Cafe.Features;
+using Articy.Cozy_Cafe_atricy;
+using Articy.Cozy_Cafe_atricy.Features;
 using Articy.Unity;
 using Articy.Unity.Interfaces;
 using System;
@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Articy.Cozy_Cafe.Templates
+namespace Articy.Cozy_Cafe_atricy.Templates
 {
     
     

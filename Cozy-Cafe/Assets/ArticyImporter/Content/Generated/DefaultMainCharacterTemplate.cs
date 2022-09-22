@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Articy.Cozy_Cafe.Features;
+using Articy.Cozy_Cafe_atricy.Features;
 using Articy.Unity;
 using Articy.Unity.Interfaces;
 using System;
@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -27,9 +27,9 @@ namespace Articy.Cozy_Cafe
         [SerializeField()]
         private ArticyValueDefaultMainCharacterTemplateTemplate mTemplate = new ArticyValueDefaultMainCharacterTemplateTemplate();
         
-        private static Articy.Cozy_Cafe.Templates.DefaultMainCharacterTemplateTemplateConstraint mConstraints = new Articy.Cozy_Cafe.Templates.DefaultMainCharacterTemplateTemplateConstraint();
+        private static Articy.Cozy_Cafe_atricy.Templates.DefaultMainCharacterTemplateTemplateConstraint mConstraints = new Articy.Cozy_Cafe_atricy.Templates.DefaultMainCharacterTemplateTemplateConstraint();
         
-        public Articy.Cozy_Cafe.Templates.DefaultMainCharacterTemplateTemplate Template
+        public Articy.Cozy_Cafe_atricy.Templates.DefaultMainCharacterTemplateTemplate Template
         {
             get
             {
@@ -41,7 +41,7 @@ namespace Articy.Cozy_Cafe
             }
         }
         
-        public static Articy.Cozy_Cafe.Templates.DefaultMainCharacterTemplateTemplateConstraint Constraints
+        public static Articy.Cozy_Cafe_atricy.Templates.DefaultMainCharacterTemplateTemplateConstraint Constraints
         {
             get
             {
@@ -64,7 +64,7 @@ namespace Articy.Cozy_Cafe
             DefaultMainCharacterTemplate newClone = ((DefaultMainCharacterTemplate)(aClone));
             if ((Template != null))
             {
-                newClone.Template = ((Articy.Cozy_Cafe.Templates.DefaultMainCharacterTemplateTemplate)(Template.CloneObject(newClone, aFirstClassParent)));
+                newClone.Template = ((Articy.Cozy_Cafe_atricy.Templates.DefaultMainCharacterTemplateTemplate)(Template.CloneObject(newClone, aFirstClassParent)));
             }
             base.CloneProperties(newClone, aFirstClassParent);
         }

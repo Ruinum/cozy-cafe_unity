@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Articy.Cozy_Cafe;
+using Articy.Cozy_Cafe_atricy;
 using Articy.Unity;
 using Articy.Unity.Interfaces;
 using Ruinum.Core;
@@ -17,8 +17,7 @@ namespace DialogueSystem {
 
         private ArticyFlowPlayer flowPlayer;
 
-        private void Start()
-        {
+        private void Start() {
             flowPlayer = GetComponent<ArticyFlowPlayer>();
         }
 

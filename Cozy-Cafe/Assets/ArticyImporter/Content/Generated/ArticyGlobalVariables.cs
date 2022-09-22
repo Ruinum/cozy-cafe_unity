@@ -15,7 +15,7 @@ using System.Collections;
 using UnityEngine;
 
 
-namespace Articy.Cozy_Cafe.GlobalVariables
+namespace Articy.Cozy_Cafe_atricy.GlobalVariables
 {
     
     
@@ -26,20 +26,72 @@ namespace Articy.Cozy_Cafe.GlobalVariables
         
         [SerializeField()]
         [HideInInspector()]
-        private AntiCatLady mAntiCatLady = new AntiCatLady();
+        private BaristaFriend mBaristaFriend = new BaristaFriend();
+        
+        [SerializeField()]
+        [HideInInspector()]
+        private GlobalGlobalVariables mGlobalGlobalVariables = new GlobalGlobalVariables();
+        
+        [SerializeField()]
+        [HideInInspector()]
+        private Reviewer mReviewer = new Reviewer();
+        
+        [SerializeField()]
+        [HideInInspector()]
+        private KindOldMan mKindOldMan = new KindOldMan();
+        
+        [SerializeField()]
+        [HideInInspector()]
+        private TiredClerk mTiredClerk = new TiredClerk();
         
         #region Initialize static VariableName set
         static ArticyGlobalVariables()
         {
-            variableNames.Add("AntiCatLady.likesCats");
+            variableNames.Add("BaristaFriend.OrderDoneCorrectly");
+            variableNames.Add("GlobalGlobalVariables.CafeRating");
+            variableNames.Add("Reviewer.OrderDoneCorrectly");
+            variableNames.Add("KindOldMan.AgreedToListen");
+            variableNames.Add("TiredClerk.GetNewJob");
         }
         #endregion
         
-        public AntiCatLady AntiCatLady
+        public BaristaFriend BaristaFriend
         {
             get
             {
-                return mAntiCatLady;
+                return mBaristaFriend;
+            }
+        }
+        
+        public GlobalGlobalVariables GlobalGlobalVariables
+        {
+            get
+            {
+                return mGlobalGlobalVariables;
+            }
+        }
+        
+        public Reviewer Reviewer
+        {
+            get
+            {
+                return mReviewer;
+            }
+        }
+        
+        public KindOldMan KindOldMan
+        {
+            get
+            {
+                return mKindOldMan;
+            }
+        }
+        
+        public TiredClerk TiredClerk
+        {
+            get
+            {
+                return mTiredClerk;
             }
         }
         
@@ -53,7 +105,11 @@ namespace Articy.Cozy_Cafe.GlobalVariables
         
         public override void Init()
         {
-            AntiCatLady.RegisterVariables(this);
+            BaristaFriend.RegisterVariables(this);
+            GlobalGlobalVariables.RegisterVariables(this);
+            Reviewer.RegisterVariables(this);
+            KindOldMan.RegisterVariables(this);
+            TiredClerk.RegisterVariables(this);
         }
         
         public static ArticyGlobalVariables CreateGlobalVariablesClone()

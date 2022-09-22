@@ -1,4 +1,4 @@
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
 	public static class EnumExtensionMethods
 	{

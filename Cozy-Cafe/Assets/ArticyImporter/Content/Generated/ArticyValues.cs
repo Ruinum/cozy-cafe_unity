@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -25,7 +25,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -34,7 +34,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -43,7 +43,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -52,7 +52,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -61,7 +61,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -70,7 +70,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -79,7 +79,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -88,7 +88,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -97,7 +97,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -106,7 +106,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -115,7 +115,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -124,7 +124,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -133,7 +133,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -142,7 +142,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -151,7 +151,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -160,7 +160,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -169,7 +169,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -178,7 +178,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -187,25 +187,25 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
     [Serializable()]
-    public class ArticyValueDefaultSupportingCharacterTemplateTemplate : ArticyValue<Articy.Cozy_Cafe.Templates.DefaultSupportingCharacterTemplateTemplate>
+    public class ArticyValueDefaultSupportingCharacterTemplateTemplate : ArticyValue<Articy.Cozy_Cafe_atricy.Templates.DefaultSupportingCharacterTemplateTemplate>
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
     [Serializable()]
-    public class ArticyValueDefaultBasicCharacterFeatureFeature : ArticyValue<Articy.Cozy_Cafe.Features.DefaultBasicCharacterFeatureFeature>
+    public class ArticyValueDefaultBasicCharacterFeatureFeature : ArticyValue<Articy.Cozy_Cafe_atricy.Features.DefaultBasicCharacterFeatureFeature>
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -214,25 +214,25 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
     [Serializable()]
-    public class ArticyValueDefaultMainCharacterTemplateTemplate : ArticyValue<Articy.Cozy_Cafe.Templates.DefaultMainCharacterTemplateTemplate>
+    public class ArticyValueDefaultMainCharacterTemplateTemplate : ArticyValue<Articy.Cozy_Cafe_atricy.Templates.DefaultMainCharacterTemplateTemplate>
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
     [Serializable()]
-    public class ArticyValueDefaultExtendedCharacterFeatureFeature : ArticyValue<Articy.Cozy_Cafe.Features.DefaultExtendedCharacterFeatureFeature>
+    public class ArticyValueDefaultExtendedCharacterFeatureFeature : ArticyValue<Articy.Cozy_Cafe_atricy.Features.DefaultExtendedCharacterFeatureFeature>
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -241,7 +241,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -250,7 +250,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -259,7 +259,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -268,7 +268,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -277,7 +277,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -286,7 +286,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -295,7 +295,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -304,7 +304,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -313,7 +313,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -322,7 +322,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -331,7 +331,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -340,7 +340,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -349,7 +349,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -358,7 +358,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -367,7 +367,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -376,7 +376,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -385,7 +385,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
@@ -394,7 +394,7 @@ namespace Articy.Cozy_Cafe
     {
     }
 }
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     

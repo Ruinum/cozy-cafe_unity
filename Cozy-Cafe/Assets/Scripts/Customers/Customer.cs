@@ -24,7 +24,6 @@ public class Customer : Executable
     {
         base.Start();
 
-        Debug.Log("created new customer");
         TimeToWait += Random.Range(MinChangeTime, MaxChangeTime);
         _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);
         GameManager.Singleton.AddExecuteObject(this);

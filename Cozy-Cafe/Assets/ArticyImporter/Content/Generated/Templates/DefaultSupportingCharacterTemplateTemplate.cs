@@ -8,8 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Articy.Cozy_Cafe;
-using Articy.Cozy_Cafe.Features;
+using Articy.Cozy_Cafe_atricy;
+using Articy.Cozy_Cafe_atricy.Features;
 using Articy.Unity;
 using Articy.Unity.Interfaces;
 using System;
@@ -18,7 +18,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Articy.Cozy_Cafe.Templates
+namespace Articy.Cozy_Cafe_atricy.Templates
 {
     
     
@@ -35,7 +35,7 @@ namespace Articy.Cozy_Cafe.Templates
         [SerializeField()]
         private UInt32 mOwnerInstanceId;
         
-        public Articy.Cozy_Cafe.Features.DefaultBasicCharacterFeatureFeature DefaultBasicCharacterFeature
+        public Articy.Cozy_Cafe_atricy.Features.DefaultBasicCharacterFeatureFeature DefaultBasicCharacterFeature
         {
             get
             {
@@ -75,17 +75,17 @@ namespace Articy.Cozy_Cafe.Templates
         
         private void CloneProperties(object aClone, Articy.Unity.ArticyObject aFirstClassParent)
         {
-            Articy.Cozy_Cafe.Templates.DefaultSupportingCharacterTemplateTemplate newClone = ((Articy.Cozy_Cafe.Templates.DefaultSupportingCharacterTemplateTemplate)(aClone));
+            Articy.Cozy_Cafe_atricy.Templates.DefaultSupportingCharacterTemplateTemplate newClone = ((Articy.Cozy_Cafe_atricy.Templates.DefaultSupportingCharacterTemplateTemplate)(aClone));
             if ((DefaultBasicCharacterFeature != null))
             {
-                newClone.DefaultBasicCharacterFeature = ((Articy.Cozy_Cafe.Features.DefaultBasicCharacterFeatureFeature)(DefaultBasicCharacterFeature.CloneObject(newClone, aFirstClassParent)));
+                newClone.DefaultBasicCharacterFeature = ((Articy.Cozy_Cafe_atricy.Features.DefaultBasicCharacterFeatureFeature)(DefaultBasicCharacterFeature.CloneObject(newClone, aFirstClassParent)));
             }
             newClone.OwnerId = OwnerId;
         }
         
         public object CloneObject(object aParent, Articy.Unity.ArticyObject aFirstClassParent)
         {
-            Articy.Cozy_Cafe.Templates.DefaultSupportingCharacterTemplateTemplate clone = new Articy.Cozy_Cafe.Templates.DefaultSupportingCharacterTemplateTemplate();
+            Articy.Cozy_Cafe_atricy.Templates.DefaultSupportingCharacterTemplateTemplate clone = new Articy.Cozy_Cafe_atricy.Templates.DefaultSupportingCharacterTemplateTemplate();
             CloneProperties(clone, aFirstClassParent);
             return clone;
         }

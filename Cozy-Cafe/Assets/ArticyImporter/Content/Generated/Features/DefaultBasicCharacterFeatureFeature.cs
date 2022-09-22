@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Articy.Cozy_Cafe;
+using Articy.Cozy_Cafe_atricy;
 using Articy.Unity;
 using Articy.Unity.Interfaces;
 using System;
@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Articy.Cozy_Cafe.Features
+namespace Articy.Cozy_Cafe_atricy.Features
 {
     
     
@@ -241,7 +241,7 @@ namespace Articy.Cozy_Cafe.Features
         
         private void CloneProperties(object aClone, Articy.Unity.ArticyObject aFirstClassParent)
         {
-            Articy.Cozy_Cafe.Features.DefaultBasicCharacterFeatureFeature newClone = ((Articy.Cozy_Cafe.Features.DefaultBasicCharacterFeatureFeature)(aClone));
+            Articy.Cozy_Cafe_atricy.Features.DefaultBasicCharacterFeatureFeature newClone = ((Articy.Cozy_Cafe_atricy.Features.DefaultBasicCharacterFeatureFeature)(aClone));
             newClone.Age = Age;
             newClone.Species = Unresolved_Species;
             newClone.BornIn = Unresolved_BornIn;
@@ -255,7 +255,7 @@ namespace Articy.Cozy_Cafe.Features
         
         public object CloneObject(object aParent, Articy.Unity.ArticyObject aFirstClassParent)
         {
-            Articy.Cozy_Cafe.Features.DefaultBasicCharacterFeatureFeature clone = new Articy.Cozy_Cafe.Features.DefaultBasicCharacterFeatureFeature();
+            Articy.Cozy_Cafe_atricy.Features.DefaultBasicCharacterFeatureFeature clone = new Articy.Cozy_Cafe_atricy.Features.DefaultBasicCharacterFeatureFeature();
             CloneProperties(clone, aFirstClassParent);
             return clone;
         }

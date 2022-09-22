@@ -17,7 +17,7 @@ using System.Linq;
 using UnityEngine;
 
 
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     

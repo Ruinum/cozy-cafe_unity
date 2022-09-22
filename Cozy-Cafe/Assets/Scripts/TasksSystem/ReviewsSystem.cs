@@ -1,21 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ReviewsSystem : MonoBehaviour
-{
+public class ReviewsSystem : MonoBehaviour {
     public static ReviewsSystem Singletone;
 
-    [Range(-20, 20)]
-    public int Rating = 0;
+    public float CafeRating { get; set; }
 
-    private void Awake()
-    {
+    [SerializeField] private float minRating = -2f;
+    [SerializeField] private float maxRating = 2f;
+
+    private void Awake() {
         Singletone = this;
+        CafeRating = 1f;
     }
 
-    public void ChangeRating(int value)
-    {
-        Rating += value;
+    public void ChangeRating(float value) {
+        var tryChangeRating = CafeRating + value;
+        if (tryChangeRating <= maxRating && tryChangeRating >= minRating) CafeRating = tryChangeRating;
     }
 }

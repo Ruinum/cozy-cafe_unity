@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using Articy.Cozy_Cafe.GlobalVariables;
+using Articy.Cozy_Cafe_atricy.GlobalVariables;
 using Articy.Unity.Editor.PropertyDrawer;
 using System;
 using System.Collections;
@@ -16,11 +16,11 @@ using UnityEditor;
 using UnityEngine;
 
 
-namespace Articy.Cozy_Cafe
+namespace Articy.Cozy_Cafe_atricy
 {
     
     
-    [CustomEditor(typeof(Articy.Cozy_Cafe.GlobalVariables.ArticyGlobalVariables))]
+    [CustomEditor(typeof(Articy.Cozy_Cafe_atricy.GlobalVariables.ArticyGlobalVariables))]
     public class GlobalVariablesDrawer : GlobalVariablesEditor
     {
     }
@@ -31,7 +31,7 @@ namespace Articy.Cozy_Cafe
         [UnityEditor.MenuItem("Tools/articy:draft Importer/Advanced/Create GlobalVariables")]
         public static void CreateNewGlobalVariables()
         {
-Articy.Unity.Editor.Utils.ArticyEditorUtility.CreateGlobalVariablesClone<Articy.Cozy_Cafe.GlobalVariables.ArticyGlobalVariables>();
+Articy.Unity.Editor.Utils.ArticyEditorUtility.CreateGlobalVariablesClone<Articy.Cozy_Cafe_atricy.GlobalVariables.ArticyGlobalVariables>();
         }
     }
 }

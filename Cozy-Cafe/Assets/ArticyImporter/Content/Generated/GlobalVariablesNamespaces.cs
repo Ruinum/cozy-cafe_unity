@@ -15,19 +15,19 @@ using System.Collections;
 using UnityEngine;
 
 
-namespace Articy.Cozy_Cafe.GlobalVariables
+namespace Articy.Cozy_Cafe_atricy.GlobalVariables
 {
     
     
     [Serializable()]
-    public class AntiCatLady : IArticyNamespace
+    public class BaristaFriend : IArticyNamespace
     {
         
         [SerializeField()]
         private BaseGlobalVariables _VariableStorage;
         
-        // If barista likes cats or not
-        public bool likesCats
+        // 
+        public bool OrderDoneCorrectly
         {
             get
             {
@@ -42,7 +42,131 @@ namespace Articy.Cozy_Cafe.GlobalVariables
         public void RegisterVariables(BaseGlobalVariables aStorage)
         {
             _VariableStorage = aStorage;
-            aStorage.RegisterVariable("AntiCatLady.likesCats", false);
+            aStorage.RegisterVariable("BaristaFriend.OrderDoneCorrectly", false);
+        }
+    }
+}
+namespace Articy.Cozy_Cafe_atricy.GlobalVariables
+{
+    
+    
+    [Serializable()]
+    public class GlobalGlobalVariables : IArticyNamespace
+    {
+        
+        [SerializeField()]
+        private BaseGlobalVariables _VariableStorage;
+        
+        // 
+        public int CafeRating
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueInt32(0);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueInt32(0, value);
+            }
+        }
+        
+        public void RegisterVariables(BaseGlobalVariables aStorage)
+        {
+            _VariableStorage = aStorage;
+            aStorage.RegisterVariable("GlobalGlobalVariables.CafeRating", 100);
+        }
+    }
+}
+namespace Articy.Cozy_Cafe_atricy.GlobalVariables
+{
+    
+    
+    [Serializable()]
+    public class Reviewer : IArticyNamespace
+    {
+        
+        [SerializeField()]
+        private BaseGlobalVariables _VariableStorage;
+        
+        // 
+        public bool OrderDoneCorrectly
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(1);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(1, value);
+            }
+        }
+        
+        public void RegisterVariables(BaseGlobalVariables aStorage)
+        {
+            _VariableStorage = aStorage;
+            aStorage.RegisterVariable("Reviewer.OrderDoneCorrectly", false);
+        }
+    }
+}
+namespace Articy.Cozy_Cafe_atricy.GlobalVariables
+{
+    
+    
+    [Serializable()]
+    public class KindOldMan : IArticyNamespace
+    {
+        
+        [SerializeField()]
+        private BaseGlobalVariables _VariableStorage;
+        
+        // 
+        public bool AgreedToListen
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(2);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(2, value);
+            }
+        }
+        
+        public void RegisterVariables(BaseGlobalVariables aStorage)
+        {
+            _VariableStorage = aStorage;
+            aStorage.RegisterVariable("KindOldMan.AgreedToListen", false);
+        }
+    }
+}
+namespace Articy.Cozy_Cafe_atricy.GlobalVariables
+{
+    
+    
+    [Serializable()]
+    public class TiredClerk : IArticyNamespace
+    {
+        
+        [SerializeField()]
+        private BaseGlobalVariables _VariableStorage;
+        
+        // 
+        public bool GetNewJob
+        {
+            get
+            {
+                return _VariableStorage.Internal_GetVariableValueBoolean(3);
+            }
+            set
+            {
+                _VariableStorage.Internal_SetVariableValueBoolean(3, value);
+            }
+        }
+        
+        public void RegisterVariables(BaseGlobalVariables aStorage)
+        {
+            _VariableStorage = aStorage;
+            aStorage.RegisterVariable("TiredClerk.GetNewJob", false);
         }
     }
 }
