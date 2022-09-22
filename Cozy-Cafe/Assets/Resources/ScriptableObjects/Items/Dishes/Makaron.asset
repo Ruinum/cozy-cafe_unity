@@ -15,7 +15,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 78e07089b228a2a43b7d5fed55436227, type: 3}
   Name: Makaron
   Description: 
-  Cost: 0
+  Cost: 15
   IsSyrup: 0
   IsTopping: 0
   IsDessert: 1

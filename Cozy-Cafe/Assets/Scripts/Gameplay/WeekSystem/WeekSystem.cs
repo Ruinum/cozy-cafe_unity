@@ -4,8 +4,11 @@ using Ruinum.Core;
 
 public class WeekSystem : BaseSingleton<WeekSystem>
 {
+
     private List<DayLogic> _dayLogics = new List<DayLogic>();
     private DayType _currentDay = DayType.Monday;
+    public int dayNum = 1;
+
 
     private void Start()
     {
@@ -20,6 +23,8 @@ public class WeekSystem : BaseSingleton<WeekSystem>
     
     public void ChangeDay()
     {
+        SceneTransition.Singleton.DayChange();
+
         switch (_currentDay)
         {
             case DayType.Monday: _currentDay = DayType.Tuesday; break;
@@ -31,6 +36,21 @@ public class WeekSystem : BaseSingleton<WeekSystem>
             case DayType.Sunday: _currentDay = DayType.Monday; break;
             default: break;
         }
+    }
+
+    public int GetDayNum()
+    {
+        return dayNum;
+    }
+
+    public void AddDay()
+    {
+        dayNum++;
+    }
+
+    public DayType GetDay()
+    {
+        return _currentDay;
     }
 
     public void AddDayLogic(IDayLogic dayLogic, DayType dayType)

@@ -15,7 +15,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: c757b238a4e07374e930e3148d1b7599, type: 3}
   Name: ChocholateIceCream
   Description: 
-  Cost: 0
+  Cost: 55
   IsSyrup: 0
   IsTopping: 0
   IsDessert: 1

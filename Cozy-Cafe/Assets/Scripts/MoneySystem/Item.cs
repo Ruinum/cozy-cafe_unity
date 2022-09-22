@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Item : AnimationObject
 {
-    [SerializeField] private ItemSO itemSO;
+    [SerializeField] private ItemSO _itemSO;
+    [SerializeField] GameObject _hintCanvas;
 
     private Vector3 _startPosition;
 
     private void Start()
     {
         _startPosition = transform.position;
+        
+        _hintCanvas.SetActive(false);
     }
 
     private void OnMouseDown()
@@ -23,33 +26,42 @@ public class Item : AnimationObject
         transform.position = new Vector3(MouseUtils.GetMouseWorld2DPosition().x, MouseUtils.GetMouseWorld2DPosition().y, transform.position.z);
     }
 
-    private void OnMouseExit()
-    {
-        RefreshSettings();
-    }
-
     private void OnMouseUp()
     {
         if (!MouseUtils.TryRaycast2DToMousePosition(out var raycastHit2D)) { RefreshSettings(); return; }
-        if (raycastHit2D.collider.TryGetComponent<CraftObject>(out var craftObject))
+        if (raycastHit2D.collider.TryGetComponent<CraftObject>(out var craftObject) && !_itemSO.IsDessert && craftObject.GetItems().Count < 4)
         {
-            craftObject.AddItem(itemSO);
+            craftObject.AddItem(_itemSO);
 
             AnimationPunch();
-            RefreshSettings();
 
-            MoneySystem.Singleton.SubtractAmount(itemSO);
+            MoneySystem.Singleton.SubtractAmount(_itemSO);
+
+            RefreshSettings();
         }
 
         if (raycastHit2D.collider.TryGetComponent<Customer>(out var customer))
         {
-            customer.task.AddItem(itemSO);
+            customer.task.AddItem(_itemSO);
 
             AnimationPunch();
-            RefreshSettings();
 
-            MoneySystem.Singleton.SubtractAmount(itemSO);
+            MoneySystem.Singleton.SubtractAmount(_itemSO);
+
+            RefreshSettings();
         }
+
+        RefreshSettings();
+    }
+
+    private void OnMouseEnter()
+    {
+        _hintCanvas.SetActive(true);
+    }
+
+    private void OnMouseExit()
+    {
+        _hintCanvas.SetActive(false);
     }
 
     private void RefreshSettings()
