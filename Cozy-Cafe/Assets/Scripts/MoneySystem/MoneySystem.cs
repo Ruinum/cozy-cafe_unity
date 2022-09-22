@@ -12,13 +12,13 @@ public class MoneySystem : BaseSingleton<MoneySystem>
 
     private void Start()
     {
-        _textMoneyAmount.text = _currentAmount.ToString();
+        _textMoneyAmount.text = $"Money: {_currentAmount}";
     }
 
     public void AddAmount(int amount)
     {
         _currentAmount += amount;
-        _textMoneyAmount.text = _currentAmount.ToString();
+        _textMoneyAmount.text = $"Money: {_currentAmount}";
 
         CreatePopup($"+{amount}", Color.green);
     }
@@ -26,7 +26,7 @@ public class MoneySystem : BaseSingleton<MoneySystem>
     public void SubtractAmount(int amount)
     {
         _currentAmount -= amount;
-        _textMoneyAmount.text = _currentAmount.ToString();
+        _textMoneyAmount.text = $"Money: {_currentAmount}";
 
         CreatePopup($"-{amount}", Color.red);
     }
@@ -34,7 +34,7 @@ public class MoneySystem : BaseSingleton<MoneySystem>
     public void SubtractAmount(ItemSO item)
     {
         _currentAmount -= item.Cost;
-        _textMoneyAmount.text = _currentAmount.ToString();
+        _textMoneyAmount.text = $"Money: {_currentAmount}";
 
         CreatePopup($"-{item.Cost}", Color.red);
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Item : AnimationObject
 {
-    [SerializeField] private ItemSO itemSO;
+    [SerializeField] private ItemSO _itemSO;
     [SerializeField] GameObject _hintCanvas;
 
     private Vector3 _startPosition;
@@ -29,22 +29,22 @@ public class Item : AnimationObject
     private void OnMouseUp()
     {
         if (!MouseUtils.TryRaycast2DToMousePosition(out var raycastHit2D)) { RefreshSettings(); return; }
-        if (raycastHit2D.collider.TryGetComponent<CraftObject>(out var craftObject))
+        if (raycastHit2D.collider.TryGetComponent<CraftObject>(out var craftObject) && !_itemSO.IsDessert)
         {
-            craftObject.AddItem(itemSO);
+            craftObject.AddItem(_itemSO);
 
             AnimationPunch();
 
-            MoneySystem.Singleton.SubtractAmount(itemSO);
+            MoneySystem.Singleton.SubtractAmount(_itemSO);
         }
 
         if (raycastHit2D.collider.TryGetComponent<Customer>(out var customer))
         {
-            customer.task.AddItem(itemSO);
+            customer.task.AddItem(_itemSO);
 
             AnimationPunch();
 
-            MoneySystem.Singleton.SubtractAmount(itemSO);
+            MoneySystem.Singleton.SubtractAmount(_itemSO);
         }
 
         RefreshSettings();
