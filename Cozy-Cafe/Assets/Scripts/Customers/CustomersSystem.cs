@@ -11,8 +11,8 @@ public class CustomersSystem : BaseSingleton<CustomersSystem> {
     public float maxTime;
 
     public List<GameObject> TodaySpecialCustomers { get; set; }
-    
-    private Dictionary<DayType, List<GameObject>> allSpecialCustomers;
+
+    private Dictionary<DayType, List<GameObject>> allSpecialCustomers = new Dictionary<DayType, List<GameObject>>();
     private int customersCount;
     private bool[] Place = new bool[3];
     private float spawningProbability = 0.2f;
