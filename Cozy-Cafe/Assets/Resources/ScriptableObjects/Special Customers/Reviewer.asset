@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b877c992a299524f8e86678d3c8e7fa, type: 3}
   m_Name: Reviewer
   m_EditorClassIdentifier: 
-  art: {fileID: 0}
+  customerName: Reviewer
   tasks: []
   dialogues:
   - instanceId: 0
@@ -32,3 +32,4 @@ MonoBehaviour:
     lowId: 942
     highId: 16777216
   ordersNumber: 0
+  hasSecondDialogue: 1

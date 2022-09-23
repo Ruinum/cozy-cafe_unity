@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b877c992a299524f8e86678d3c8e7fa, type: 3}
   m_Name: Tired Clerk
   m_EditorClassIdentifier: 
-  art: {fileID: 0}
+  customerName: TiredClerk
   tasks:
   - completed: 0
     TskNum: 0
@@ -36,3 +36,4 @@ MonoBehaviour:
     lowId: 726
     highId: 16777216
   ordersNumber: 0
+  hasSecondDialogue: 0

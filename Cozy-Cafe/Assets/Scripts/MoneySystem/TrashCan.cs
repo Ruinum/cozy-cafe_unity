@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
 public class TrashCan : MonoBehaviour
@@ -18,5 +19,9 @@ public class TrashCan : MonoBehaviour
     private void OnMouseExit()
     {
         _canvas.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        Destroy(other.gameObject);
     }
 }

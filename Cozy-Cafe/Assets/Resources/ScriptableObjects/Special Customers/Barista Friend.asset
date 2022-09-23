@@ -12,16 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b877c992a299524f8e86678d3c8e7fa, type: 3}
   m_Name: Barista Friend
   m_EditorClassIdentifier: 
-  art: {fileID: 0}
-  tasks:
-  - completed: 0
-    TskNum: 0
-    Duration: 0
-    Dish:
-    - Item: {fileID: 11400000, guid: 527025a975016934abe31bb79affc29e, type: 2}
-      _isHave: 0
-    - Item: {fileID: 11400000, guid: 1826a3cb4ab0fcb4395c3c4a81f96148, type: 2}
-      _isHave: 0
+  customerName: BaristaFriend
+  tasks: []
   dialogues:
   - instanceId: 0
     referencingMode: 0
@@ -32,3 +24,4 @@ MonoBehaviour:
     lowId: 319
     highId: 16777216
   ordersNumber: 0
+  hasSecondDialogue: 1
