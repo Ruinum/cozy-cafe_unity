@@ -23,7 +23,7 @@ public class Customer : Executable
     [HideInInspector] public int _Pos;
 
     private Timer _timerToLeave;
-    protected bool _isTaskCreated;
+    public bool _isTaskCreated;
     private bool clicked;
 
 

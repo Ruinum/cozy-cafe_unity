@@ -21,7 +21,7 @@ public class CustomersSystem : BaseSingleton<CustomersSystem> {
     private float spawningProbability = 1f;
     private bool specialExists;
 
-    private readonly Vector3 startPos = new Vector3(-5.5f, -2, 0);
+    private readonly Vector3 startPos = new Vector3(-4.5f, -2, 0);
     private readonly Vector3 startPos2 = new Vector3(-8f, -2, 0);
 
     protected override void Awake() {
@@ -69,7 +69,7 @@ public class CustomersSystem : BaseSingleton<CustomersSystem> {
         customer._Pos = cPos;
 
         customersCount++;
-        ComeAnimation2(customerGO, startPos + ((transform.right * 5.5f) * cPos));
+        ComeAnimation2(customerGO, startPos + ((transform.right * 4.5f) * cPos));
     }
 
     private static void ComeAnimation2(GameObject @object, Vector3 _Pos) {

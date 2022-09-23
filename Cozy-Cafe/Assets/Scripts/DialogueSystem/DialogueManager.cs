@@ -33,8 +33,11 @@ namespace DialogueSystem {
         }
 
         public void CloseDialogueBox() {
+            Time.timeScale = 1;
+
             dialogueBox.SetActive(false);
 
+            if (Singleton.currentCustomer._isTaskCreated) return;
             Singleton.currentCustomer.SetTask();
         }
 

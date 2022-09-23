@@ -36,8 +36,11 @@ public class SpecialCustomer : Customer {
             if (task.completed) {
                 DialogueManager.Singleton.OrderDoneCorrectly();
             }
+
+            Time.timeScale = 0;
             
             DialogueManager.Singleton.StartDialogue(GetDialogue(), this);
+            data.hasSecondDialogue = false;
         }
         
         base.Leave();
@@ -59,8 +62,6 @@ public class SpecialCustomer : Customer {
     }
 
     public void SetTask() {
-        Time.timeScale = 1;
-        
         AddTask();
     }
 }

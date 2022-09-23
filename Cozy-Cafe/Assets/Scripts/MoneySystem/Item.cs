@@ -29,6 +29,7 @@ public partial class Item : AnimationObject
     private void OnMouseUp()
     {
         if (!MouseUtils.TryRaycast2DToMousePosition(out var raycastHit2D)) { RefreshSettings(); return; }
+        
         if (raycastHit2D.collider.TryGetComponent<CraftObject>(out var craftObject) && !_itemSO.IsDessert && craftObject.GetItems().Count < 4)
         {
             craftObject.AddItem(_itemSO);
@@ -53,7 +54,7 @@ public partial class Item : AnimationObject
 
         if (raycastHit2D.collider.TryGetComponent<TrashCan>(out var trash))
         {
-            Destroy(gameObject);
+            Destroy(this);
         }
 
         RefreshSettings();
