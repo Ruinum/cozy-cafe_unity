@@ -57,7 +57,6 @@ public class WeekSystem : BaseSingleton<WeekSystem>
 
     public void AddDayLogic(IDayLogic dayLogic, DayType dayType)
     {
-        Debug.Log(_dayLogics.Count + " addDayLogic");
         for (int i = 0; i < _dayLogics.Count; i++)
         {
             if (_dayLogics[i].DayType != dayType) continue;

@@ -5,8 +5,9 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Data", menuName = "Customers/SpecialCustomerData")]
 public class SpecialCustomerSO : ScriptableObject {
-    public GameObject art;
+    public string customerName;
     public List<Task> tasks;
     public List<ArticyRef> dialogues;
     [HideInInspector] public int ordersNumber;
+    public bool hasSecondDialogue;
 }

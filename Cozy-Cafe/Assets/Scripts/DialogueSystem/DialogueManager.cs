@@ -27,19 +27,18 @@ namespace DialogueSystem {
             dialogueBox.SetActive(true);
 
             currentCustomer = customer;
+            OrderDoneCorrectly();
 
             flowPlayer.StartOn = aObject;
         }
 
         public void CloseDialogueBox() {
-            Debug.Log(currentCustomer);
             dialogueBox.SetActive(false);
-            
+
             Singleton.currentCustomer.SetTask();
         }
 
         public void OnFlowPlayerPaused(IFlowObject aObject) {
-            
             dialogueText.text = string.Empty;
             personName.text = string.Empty;
 
@@ -73,6 +72,14 @@ namespace DialogueSystem {
         private void ClearBranches() {
             foreach (Transform child in branchingPanel) {
                 Destroy(child.gameObject);
+            }
+        }
+
+        public void OrderDoneCorrectly() {
+            if (Singleton.currentCustomer.data.customerName == "Reviewer" ||
+                Singleton.currentCustomer.data.customerName == "BaristaFriend") {
+                flowPlayer.GlobalVariables.SetVariableByString(
+                    Singleton.currentCustomer.data.customerName + ".OrderDoneCorrectly", true);
             }
         }
     }

@@ -83,7 +83,7 @@ public class Customer : Executable
         }
     }
 
-    public void Leave()
+    public virtual void Leave()
     {
         ReviewsSystem.Singletone.ChangeRating(task.completed ? 2 : -2);
         CustomersSystem.Singleton.CustomerLeave(gameObject);
@@ -96,13 +96,6 @@ public class Customer : Executable
         GameManager.Singleton.RemoveExecuteObject(this);
 
         task = null;
-    }
-
-    public void ResetTimer(float chg)
-    {
-        TimeToWait -= (_timerToLeave.GetCurrentTime() + chg);
-        _timerToLeave.OnTimerEnd -= Leave;
-        _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);
     }
 
     private void OnMouseDown()

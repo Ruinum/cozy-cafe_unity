@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpecialCustomer : Customer {
     
-    [SerializeField] private SpecialCustomerSO data;
+    [SerializeField] public SpecialCustomerSO data;
 
     private bool dialogueStarted;
 
@@ -28,6 +28,19 @@ public class SpecialCustomer : Customer {
 
             InitializeTaskUI();
         }
+    }
+
+    public override void Leave() {
+        if (data.hasSecondDialogue) {
+            
+            if (task.completed) {
+                DialogueManager.Singleton.OrderDoneCorrectly();
+            }
+            
+            DialogueManager.Singleton.StartDialogue(GetDialogue(), this);
+        }
+        
+        base.Leave();
     }
 
     private ArticyObject GetDialogue() {
