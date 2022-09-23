@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 using TMPro;
@@ -5,7 +6,7 @@ using TMPro;
 
 public class ClockUI : MonoBehaviour
 {
-    public const float IRL_secs_per_ingame_day = 300f; //1 день в игре = 5 минут 300
+    public const float IRL_secs_per_ingame_day = 300f; //1 РґРµРЅСЊ РІ РёРіСЂРµ = 5 РјРёРЅСѓС‚ 300
 
     public Transform clockHourHandTransform;
     public Transform clockMinHandTransform;
@@ -17,6 +18,7 @@ public class ClockUI : MonoBehaviour
     public int theCurrentDay;
     public bool end_of_day;
     private bool _nextdaystarted;
+    private bool dayInitialized;
 
     public void Start()
     {
@@ -66,6 +68,13 @@ public class ClockUI : MonoBehaviour
             if (!_nextdaystarted) { EndOfDay(); _nextdaystarted = true; }
         }
 
+    }
+
+    private void LateUpdate() {
+        if (dayInitialized) return;
+        
+        WeekSystem.Singleton.InvokeDayLogic();
+        dayInitialized = true;
     }
 
     public void EndOfDay()

@@ -22,21 +22,16 @@ public class Customer : Executable
 
     [HideInInspector] public int _Pos;
 
-    protected Timer _timerToLeave;
+    private Timer _timerToLeave;
     protected bool _isTaskCreated;
+    private bool clicked;
 
-    public override void Start()
-    {
-        base.Start();
-
-        TimeToWait += Random.Range(MinChangeTime, MaxChangeTime);
-        _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);
-        GameManager.Singleton.AddExecuteObject(this);
-    }
 
     public override void Execute()
     {
-        //patienceMeter.sizeDelta = new Vector2(_timerToLeave.GetCurrentTime() / TimeToWait * 3, 0.25f);
+        if (clicked) {
+            patienceMeter.sizeDelta = new Vector2(_timerToLeave.GetCurrentTime() / TimeToWait * 3, 0.5f);
+        }
     }
 
     protected virtual void AddTask()
@@ -93,7 +88,7 @@ public class Customer : Executable
         ReviewsSystem.Singletone.ChangeRating(task.completed ? 2 : -2);
         CustomersSystem.Singleton.CustomerLeave(gameObject);
 
-        int randomMoney = (int)(UnityEngine.Random.Range(_minRandom, _maxRandom) + _constantMoney);
+        int randomMoney = (int)(Random.Range(_minRandom, _maxRandom) + _constantMoney);
         
         if (task.completed) MoneySystem.Singleton.AddAmount(randomMoney);
         else MoneySystem.Singleton.SubtractAmount(randomMoney);
@@ -113,5 +108,8 @@ public class Customer : Executable
     private void OnMouseDown()
     {
         AddTask();
+
+        TimeToWait += Random.Range(MinChangeTime, MaxChangeTime);
+        _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);
     }
 }

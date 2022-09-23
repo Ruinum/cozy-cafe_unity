@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Ruinum.Core;
+using UnityEngine;
 
 
 public class WeekSystem : BaseSingleton<WeekSystem>
@@ -10,8 +11,9 @@ public class WeekSystem : BaseSingleton<WeekSystem>
     public int dayNum = 1;
 
 
-    private void Start()
-    {
+    protected override void Awake() {
+        base.Awake();
+        
         _dayLogics.Add(new DayLogic(DayType.Monday));
         _dayLogics.Add(new DayLogic(DayType.Tuesday));
         _dayLogics.Add(new DayLogic(DayType.Wednesday));
@@ -20,7 +22,7 @@ public class WeekSystem : BaseSingleton<WeekSystem>
         _dayLogics.Add(new DayLogic(DayType.Saturday));
         _dayLogics.Add(new DayLogic(DayType.Sunday));
     }
-    
+
     public void ChangeDay()
     {
         SceneTransition.Singleton.DayChange();
@@ -55,6 +57,7 @@ public class WeekSystem : BaseSingleton<WeekSystem>
 
     public void AddDayLogic(IDayLogic dayLogic, DayType dayType)
     {
+        Debug.Log(_dayLogics.Count + " addDayLogic");
         for (int i = 0; i < _dayLogics.Count; i++)
         {
             if (_dayLogics[i].DayType != dayType) continue;
@@ -69,5 +72,9 @@ public class WeekSystem : BaseSingleton<WeekSystem>
             if (_dayLogics[i].DayType != dayType) continue;
             _dayLogics[i].RemoveDayLogic(dayLogic);
         }
-    }    
+    }
+
+    public void InvokeDayLogic() {
+        _dayLogics[dayNum - 1].InvokeDayLogics();
+    }
 }

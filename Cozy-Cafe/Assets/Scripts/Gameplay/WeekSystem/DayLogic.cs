@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 
 [Serializable]
 public class DayLogic
 {
-    private List<IDayLogic> _dayLogics;
+    private List<IDayLogic> _dayLogics = new List<IDayLogic>();
     
     public DayType DayType;
 

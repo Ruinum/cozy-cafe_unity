@@ -16,23 +16,30 @@ namespace DialogueSystem {
         [SerializeField] private RectTransform branchingPanel;
 
         private ArticyFlowPlayer flowPlayer;
+        private SpecialCustomer currentCustomer;
 
         private void Start() {
             flowPlayer = GetComponent<ArticyFlowPlayer>();
         }
 
-        public void StartDialogue(IArticyObject aObject) {
+        public void StartDialogue(IArticyObject aObject, SpecialCustomer customer) {
             if (aObject == null) return;
             dialogueBox.SetActive(true);
+
+            currentCustomer = customer;
 
             flowPlayer.StartOn = aObject;
         }
 
-        private void CloseDialogueBox() {
+        public void CloseDialogueBox() {
+            Debug.Log(currentCustomer);
             dialogueBox.SetActive(false);
+            
+            Singleton.currentCustomer.SetTask();
         }
 
         public void OnFlowPlayerPaused(IFlowObject aObject) {
+            
             dialogueText.text = string.Empty;
             personName.text = string.Empty;
 
