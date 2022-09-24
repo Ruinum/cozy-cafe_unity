@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4204215437162919370}
   - component: {fileID: 9061324315681390899}
   m_Layer: 5
-  m_Name: Patience Meter
+  m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 402849437634057296}
   - component: {fileID: 3631114493617672439}
   m_Layer: 5
-  m_Name: Fill
+  m_Name: Patience Meter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1184,11 +1184,12 @@ MonoBehaviour:
   - {fileID: 9177162705037712701}
   - {fileID: 4780592462386907065}
   - {fileID: 7719526520021904374}
-  patienceMeter: {fileID: 4521912100421571468}
+  patienceMeter: {fileID: 9061324315681390899}
   _minRandom: 5
   _maxRandom: 15
   _constantMoney: 20
   _Pos: 0
+  _isTaskCreated: 0
   data: {fileID: 11400000, guid: 24e7fc0f178528544a236a2d946ed251, type: 2}
 --- !u!1 &8631082171572291196
 GameObject:

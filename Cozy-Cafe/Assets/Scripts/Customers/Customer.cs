@@ -3,6 +3,7 @@ using Articy.Unity;
 using UnityEngine;
 using Ruinum.Core;
 using TMPro;
+using UnityEngine.UI;
 
 public class Customer : Executable
 {
@@ -13,7 +14,7 @@ public class Customer : Executable
 
     [SerializeField] private GameObject _orderBubble;
     [SerializeField] private List<TextMeshProUGUI> _bubbleTextComponents;
-    [SerializeField] private RectTransform patienceMeter;
+    [SerializeField] private Image patienceMeter;
 
     [Header("Money Reward Settigns")]
     [SerializeField] private float _minRandom;
@@ -30,7 +31,7 @@ public class Customer : Executable
     public override void Execute()
     {
         if (clicked) {
-            patienceMeter.sizeDelta = new Vector2(_timerToLeave.GetCurrentTime() / TimeToWait * 3, 0.5f);
+            patienceMeter.fillAmount = _timerToLeave.GetCurrentTime() / TimeToWait;
         }
     }
 
@@ -39,6 +40,7 @@ public class Customer : Executable
         if (_isTaskCreated) return;
 
         task = TaskManager.Singleton.CreateTask(this);
+        task.OnTaskCompleteEvent += Leave;
         _isTaskCreated = true;
 
         InitializeTaskUI();
@@ -101,6 +103,7 @@ public class Customer : Executable
     private void OnMouseDown()
     {
         AddTask();
+        clicked = true;
 
         TimeToWait += Random.Range(MinChangeTime, MaxChangeTime);
         _timerToLeave = TimerManager.Singleton.StartTimer(TimeToWait, Leave);

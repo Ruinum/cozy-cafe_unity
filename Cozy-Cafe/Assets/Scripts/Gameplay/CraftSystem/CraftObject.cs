@@ -87,10 +87,15 @@ public class CraftObject : AnimationObject
             }
 
             gameObject.layer = 0;
-            customer.Leave();
             
             Destroy(gameObject);
         }
+
+        if (raycastHit2D.collider.TryGetComponent<TrashCan>(out var trash))
+        {
+            Destroy(gameObject);
+        }
+
         gameObject.layer = 0;
     }
 

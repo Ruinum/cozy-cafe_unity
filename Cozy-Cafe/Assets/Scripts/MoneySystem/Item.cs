@@ -52,11 +52,6 @@ public partial class Item : AnimationObject
             RefreshSettings();
         }
 
-        if (raycastHit2D.collider.TryGetComponent<TrashCan>(out var trash))
-        {
-            Destroy(this);
-        }
-
         RefreshSettings();
     }
 

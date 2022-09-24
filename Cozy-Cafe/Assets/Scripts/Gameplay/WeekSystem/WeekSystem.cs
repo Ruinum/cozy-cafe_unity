@@ -1,15 +1,12 @@
 using System.Collections.Generic;
 using Ruinum.Core;
-using UnityEngine;
 
 
 public class WeekSystem : BaseSingleton<WeekSystem>
 {
-
     private List<DayLogic> _dayLogics = new List<DayLogic>();
     private DayType _currentDay = DayType.Monday;
     public int dayNum = 1;
-
 
     protected override void Awake() {
         base.Awake();

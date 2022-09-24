@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd937998f126f334bb40e848b2cdf9b4, type: 3}
   m_Name: Latte
   m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: eee8318d1a0ae2d4bbae3ad2bd04cac6, type: 3}
   Name: Latte
-  Prefab: {fileID: 0}
+  Description: Very light drink, suitable for most people. Even if they don't drink
+    coffee.
+  Cost: 0
+  IsSyrup: 0
+  IsTopping: 0
+  IsDessert: 0

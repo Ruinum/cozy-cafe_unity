@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd937998f126f334bb40e848b2cdf9b4, type: 3}
   m_Name: Cappuchino
   m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 53492ba675dc7ee438019c727f0ad1e4, type: 3}
   Name: Cappuchino
-  Prefab: {fileID: 0}
+  Description: It's almost like espresso, but with a bit of milk. Like a semi-tart
+    wine.
+  Cost: 0
+  IsSyrup: 0
+  IsTopping: 0
+  IsDessert: 0
